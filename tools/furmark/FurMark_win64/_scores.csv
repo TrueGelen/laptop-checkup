@@ -1,0 +1,3 @@
+date,demo,platform,vendor,renderer,api_version,width,height,fullscreen,antialiasing,duration,max_gpu_temp,score,avg_fps,min_fps,max_fps
+2025.10.04@12:15:26,furmark-gl,Windows 64-bit,NVIDIA Corporation,NVIDIA GeForce RTX 5070/PCIe/SSE2,OpenGL 3.2.0 NVIDIA 581.29,3440,1440,YES,Off,60000,83,11811,196,190,203
+2025.10.15@17:39:30,furmark-gl,Windows 64-bit,NVIDIA Corporation,NVIDIA GeForce RTX 5070/PCIe/SSE2,OpenGL 3.2.0 NVIDIA 581.29,3440,1440,YES,Off,60000,81,11587,193,189,199

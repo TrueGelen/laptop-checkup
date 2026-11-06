@@ -1,0 +1,7 @@
+{
+  "version": "smartmontools 7.5, Windows x64 portable smartctl.exe",
+  "download": "https://github.com/smartmontools/smartmontools/releases/download/RELEASE_7_5/smartmontools-7.5.win32-setup.exe",
+  "installer_md5": "bb1e199ad6a3db3e1c27ae54b835cbd5",
+  "binary_sha256": "b5db94e5082c042be44994b7a4fa8f7b5c8e713b2ab1c9a560d8f7a7995ea27d",
+  "method": "Extracted bin/smartctl.exe with 7-Zip; installer not executed. Installer MD5 matched official release; binary SHA256 matched bundled checksums64.txt. GPL license included."
+}
