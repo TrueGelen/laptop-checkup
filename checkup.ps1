@@ -49,7 +49,7 @@ if ($Mode -eq 'Quick') {
   $D = @{ Idle = 120; Cpu = 600; Gpu = 600; Combo = 600; Cool = 60; DiskSec = 10; DiskSize = '1G' }
 }
 
-# Ориентиры из обзоров и спецификаций (обновлены 2026-11-01). Обзоры обычно дают один прогон R23 «на холодную»,
+# Ориентиры из обзоров и спецификаций (обновлены 2026-11-16). Обзоры обычно дают один прогон R23 «на холодную»,
 # поэтому с ними сравнивается первый проход нашего 10-минутного теста.
 # Сравнение «до/после» на одном ноутбуке работает и без профиля.
 $NbcGp76 = 'https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'
@@ -58,6 +58,8 @@ $DnA16   = 'https://3dnews.ru/1132160/obzor-gigabyte-gaming-a16-3vh'
 $GbA16   = 'https://www.gigabyte.com/Laptop/GIGABYTE-GAMING-A16-GA63H/sp'
 $GbA16Jp = 'https://www.gigabyte.com/jp/Laptop/GIGABYTE-GAMING-A16-GA63H/sp'
 $IxA16   = 'https://www.ixbt.com/live/mobilepc/gigabyte-gaming-a16-3th-igrovoy-noutbuk-s-ryzen-7-260-i-geforce-rtx-5050.amp.html'
+$GbG6x   = 'https://www.gigabyte.com/Laptop/G6X--2024/sp'
+$NbcG6x  = 'https://www.notebookcheck.net/Gigabyte-G6X-9KG-2024-review-Affordable-gaming-notebook-with-RTX-4060.818851.0.html'
 $Profiles = @(
   @{
     Match = 'Katana 17 B13V'; Board = 'MS-17L5'; Name = 'MSI Katana 17 B13VEK (i5-13420H, RTX 4050 до 105 Вт)'
@@ -94,7 +96,8 @@ $Profiles = @(
     CbRefApproximate = $true
     GpuWRef = 85; GpuWRefText = 'RTX 5050 в A16 3TH: до 85 Вт в Performance, 70 Вт в Balance, 50 Вт в Silent (Ultra-tech, iXBT Live); в спецификации GIGABYTE Japan — 75 Вт'
     GpuPowerInfoOnly = $true
-    Expected = @{ Cpu = 'Ryzen 7 260'; Cores = 8; Threads = 16; Gpu = 'RTX 5050'; VramMiB = 8192; RamType = 'DDR5'; RamMTs = 5600; PanelRes = '1920x1200'; PanelHz = 165; BatteryMWh = 76000; RamGB = $null; DiskGB = $null }
+    CpuPowerNote = 'TDP AMD 45 Вт и cTDP 35–54 Вт — характеристики процессора; 65 Вт в обзоре A16 3VH не являются официальным лимитом A16 3TH.'
+    Expected = @{ Cpu = 'Ryzen 7 260'; Cores = 8; Threads = 16; Gpu = 'RTX 5050'; VramMiB = 8192; VramType = 'GDDR7'; RamType = 'DDR5'; RamMTs = 5600; PanelRes = '1920x1200'; PanelHz = 165; BatteryMWh = 76000; AdapterW = 150; RamGB = $null; DiskGB = $null }
     GpuTempRefText = 'точного референса FurMark для этой конфигурации нет; пороги ниже — правила набора'
     Refs = @(
       @{ What = 'Мощность CPU: что подтверждено'; Value = 'AMD: TDP 45 Вт, cTDP 35–54 Вт; официальный лимит CPU именно A16 3TH не найден'; Src = 'AMD'; Url = 'https://www.amd.com/en/products/processors/laptop/ryzen/200-series/amd-ryzen-7-260.html'; Note = 'TDP не равен текущему потреблению или пределу краткого Boost. Наш набор не измеряет мощность CPU. Точный R23 для A16 3TH с RTX 5050 не подтверждён' },
@@ -105,6 +108,31 @@ $Profiles = @(
       @{ What = 'Экран'; Value = '16 дюймов, IPS, 1920x1200, 165 Гц, 300 нит'; Src = 'GIGABYTE'; Url = $GbA16; Note = 'панель WUXGA для версии с RTX 5050; проверьте 165 Гц в параметрах экрана Windows' },
       @{ What = 'Аккумулятор и блок питания'; Value = '76 Вт·ч, адаптер 150 Вт'; Src = 'GIGABYTE'; Url = $GbA16; Note = 'сверьте маркировку зарядки и заводскую ёмкость в battery.html' },
       @{ What = 'Режим перед тестом'; Value = 'GiMATE: «Игры» / Performance, питание от штатного адаптера'; Src = '3DNews, A16 3VH'; Url = $DnA16; Note = 'запишите режим и настройки вентиляторов в метку отчёта; для повторных замеров они должны совпадать' }
+    )
+  },
+  @{
+    IdPattern = '\bG6X\b|\b9KG(?:-\w+)?\b'
+    ManufacturerPattern = '\bGIGABYTE\b'
+    CpuPattern = '\bi7-13650HX\b'; GpuPattern = '\bRTX\s+4060\b'
+    Name = 'GIGABYTE G6X 9KG (2024), i7-13650HX, RTX 4060 8 ГБ'
+    CbRef = 18879; CbRefText = 'Notebookcheck, G6X 9KG (2024), Entertainment, автоматические вентиляторы; региональный SKU другой'
+    CbRefApproximate = $true
+    GpuWRef = 105; GpuWRefText = 'RTX 4060 Laptop: до 105 Вт по GIGABYTE; максимум зависит от нагрузки и режима, это не обязательное среднее в FurMark'
+    GpuPowerInfoOnly = $true
+    CpuPowerRefText = 'PL1/PL2 по обзору: Performance 135/155 Вт; Entertainment 55/115 Вт; Silent 25/30 Вт'
+    CpuPowerNote = 'Notebookcheck, показания HWiNFO по режимам Control Center; это не измерение текущего экземпляра. Наш набор не собирает CPU Package Power и лимиты CPU.'
+    CapacityNote = 'Минимальные объёмы из карточки пользователя для 9KG-43KZ894SD: RAM 16 ГБ, SSD 1024 ГБ; это цель сверки, а не комплектация всех G6X. Заводские модели и число планок/SSD не заданы.'
+    Expected = @{ Cpu = 'Core i7-13650HX'; Cores = 14; Threads = 20; Gpu = 'RTX 4060'; VramMiB = 8192; VramType = 'GDDR6'; RamType = 'DDR5'; RamMTs = 4800; PanelRes = '1920x1200'; PanelHz = 165; BatteryMWh = 73000; AdapterW = 180; RamGB = 16; DiskGB = 1024 }
+    GpuTempRefText = 'точного референса температуры для нашего FurMark на G6X нет; общие пороги набора не являются паспортными пределами G6X'
+    Refs = @(
+      @{ What = 'Cinebench R23 Multi / Single'; Value = '18 879 / 1 813'; Src = 'Notebookcheck, G6X 9KG (2024)'; Url = $NbcG6x; Note = 'i7-13650HX + RTX 4060, Entertainment, вентиляторы Auto; другой региональный SKU. Сравнение справочное, с первым проходом, не со средней за 10 минут' },
+      @{ What = 'Лимиты CPU по режимам'; Value = 'PL1/PL2: Performance 135/155 Вт; Entertainment 55/115 Вт; Silent 25/30 Вт'; Src = 'Notebookcheck, HWiNFO'; Url = $NbcG6x; Note = 'лимиты из обзора, не постоянное потребление; наш набор мощность CPU не измеряет' },
+      @{ What = 'CPU при длительной нагрузке'; Value = 'в цикле R15 снижение после 4-го прохода, затем стабилизация; Performance держит более высокую производительность'; Src = 'Notebookcheck'; Url = $NbcG6x; Note = 'R15 и R23 — разные тесты; сравнивайте повторные замеры при одинаковом режиме' },
+      @{ What = 'Видеокарта'; Value = 'RTX 4060 Laptop, 8 ГБ GDDR6, максимум 105 Вт'; Src = 'GIGABYTE'; Url = $GbG6x; Note = 'максимум не равен обязательному среднему потреблению в FurMark' },
+      @{ What = 'Память и накопители'; Value = '2 слота DDR5-4800, до 64 ГБ; 2 слота M.2 PCIe 4.0 x4 NVMe'; Src = 'GIGABYTE'; Url = $GbG6x; Note = '16 ГБ RAM и SSD 1024 ГБ — из карточки 9KG-43KZ894SD пользователя; марка и число модулей не подтверждены' },
+      @{ What = 'Экран'; Value = '16 дюймов, 1920x1200, 165 Гц, 45% NTSC, MUX'; Src = 'GIGABYTE'; Url = $GbG6x; Note = 'IPS у тестового экземпляра подтверждён Notebookcheck; установленную панель сверяйте по EDID' },
+      @{ What = 'Батарея и зарядка'; Value = '73 Вт·ч; штатный адаптер 180 Вт, поддержка PD 100 Вт'; Src = 'GIGABYTE'; Url = $GbG6x; Note = 'нагрузочные тесты проводите со штатным адаптером 180 Вт' },
+      @{ What = 'Режим для сравнения с обзором'; Value = 'Control Center: Entertainment, вентиляторы Auto'; Src = 'Notebookcheck'; Url = $NbcG6x; Note = 'Performance задаёт другие лимиты CPU. Запишите режим в метке; Silent отключает дискретную GPU' }
     )
   }
 )
@@ -543,7 +571,7 @@ function V([string]$level, [string]$what, [string]$text, [string]$basis = '', [s
       'Видеокарта: температура' { 'Пороги набора по максимуму: норма <84 °C, внимание 84–<88 °C, плохо ≥88 °C. Это диагностическое правило, не официальный предел GPU.' }
       'Видеокарта: тепловой троттлинг' { 'Доля загруженных отсчётов GPU с thermal-флагами nvidia-smi (0x20/0x40). Пороги набора: норма <2%, внимание 2–<15%, плохо ≥15%. Ожидается отсутствие устойчивого теплового ограничения; краткие пики возможны.' }
       'Видеокарта: аппаратное*' { 'Внимание при HW Slowdown / HW Power Brake (маска 0x88) ≥1% загруженных отсчётов. Причина требует проверки питания, температур и режима.' }
-      'Видеокарта: мощность*' { 'Среднее потребление / фактический лимит: норма ≥85%, внимание 70–<85%, плохо <70% (эвристика набора). Для A16 — справочно; достижение лимита не подтверждает быстродействие.' }
+      'Видеокарта: мощность*' { 'Среднее потребление / фактический лимит: норма ≥85%, внимание 70–<85%, плохо <70% (эвристика набора). При справочной оценке профиля эти пороги не назначают вердикт исправности; достижение лимита не подтверждает быстродействие.' }
       'Зарядка' { 'Внимание: разряд >3 Вт при подключённом питании в ≥10% отсчётов совместной нагрузки. Отсутствие такого разряда не подтверждает номинал адаптера.' }
       'Устройства' { 'Сравнение с ConfigManagerErrorCode=0; отключённые устройства (код 22) исключены.' }
       'Питание' { 'Для сравнения производительности требуется питание от штатного адаптера.' }
@@ -575,26 +603,24 @@ function Get-HardwareAudit($ctx, $profile) {
   $state = 'не сверено'; $reason = $unknown
   if ($e.Cpu) {
     $state = if ($i.Cpu -match $profile.CpuPattern -and $i.CpuCores -eq $e.Cores -and $i.CpuThreads -eq $e.Threads) { 'совпадает' } else { 'расхождение' }
-    $reason = 'Модель из задания; ядра/потоки по GIGABYTE. Расхождение потоков может быть связано с настройкой BIOS.'
+    $reason = 'Модель из задания; ядра/потоки по спецификации и обзору. Расхождение потоков может быть связано с настройкой BIOS.'
   }
   Add-Audit 'CPU' $(if ($e.Cpu) { "$($e.Cpu), $($e.Cores) ядер / $($e.Threads) потоков" } else { $unknown }) "$($i.Cpu), $($i.CpuCores) ядер / $($i.CpuThreads) потоков" $state $reason
-  Add-Audit 'Мощность CPU' 'Лимит конкретного ноутбука не подтверждён' 'Не измеряется этим набором' 'нет данных' 'TDP AMD 45 Вт и cTDP 35–54 Вт — характеристики процессора; 65 Вт в обзоре A16 3VH не являются официальным лимитом A16 3TH.'
-  # Последняя строка о Ryzen применима только к выбранному профилю A16.
-  if (-not $e.Cpu) { $rows[$rows.Count-1].Reason = 'Нужны показания мощности CPU Package и лимитов под нагрузкой; текущий набор их не собирает.' }
+  Add-Audit 'Мощность CPU' $(if ($profile.CpuPowerRefText) { $profile.CpuPowerRefText } else { 'Лимит конкретного ноутбука не подтверждён' }) 'Не измеряется этим набором' 'нет данных' $(if ($profile.CpuPowerNote) { $profile.CpuPowerNote } else { 'Нужны показания мощности CPU Package и лимитов под нагрузкой; текущий набор их не собирает.' })
   $gpuNames = (@($i.Nv.Name) + @($i.Gpus | ForEach-Object { $_.Name }) | Where-Object { $_ } | Select-Object -Unique) -join '; '
   $state = 'не сверено'
   if ($e.Gpu) { $state = if ($gpuNames -match $profile.GpuPattern) { 'совпадает' } else { 'расхождение' } }
   Add-Audit 'GPU' $(if ($e.Gpu) { "$($e.Gpu) Laptop" } else { $unknown }) $gpuNames $state 'Модель из задания; отсутствие дискретной GPU также может быть связано с драйвером или режимом iGPU.'
   $state = 'нет данных'
   if ($i.Nv.VramMiB) { $state = if (-not $e.VramMiB) { 'не сверено' } elseif ([math]::Abs($i.Nv.VramMiB - $e.VramMiB) -le 256) { 'совпадает' } else { 'расхождение' } }
-  Add-Audit 'Видеопамять' $(if ($e.VramMiB) { "$($e.VramMiB) МиБ, GDDR7 по спецификации" } else { $unknown }) "$(F $i.Nv.VramMiB '0') МиБ" $state 'Объём считывает nvidia-smi; тип GDDR текущий набор не определяет. Допуск 256 МиБ на резерв драйвера.'
-  Add-Audit 'Мощность GPU' $(if ($profile.GpuWRefText) { $profile.GpuWRefText } else { 'Референс не задан' }) "Лимит $(F $i.Nv.PowerLimitW '0') Вт; максимум $(F $i.Nv.PowerMaxW '0') Вт" 'сверить режим' 'Лимит сообщает драйвер; выберите одинаковый режим GiMATE/MSI Center. Ватты не заменяют тест производительности.'
+  Add-Audit 'Видеопамять' $(if ($e.VramMiB) { "$($e.VramMiB) МиБ, $($e.VramType) по спецификации" } else { $unknown }) "$(F $i.Nv.VramMiB '0') МиБ" $state 'Объём считывает nvidia-smi; тип GDDR текущий набор не определяет. Допуск 256 МиБ на резерв драйвера.'
+  Add-Audit 'Мощность GPU' $(if ($profile.GpuWRefText) { $profile.GpuWRefText } else { 'Референс не задан' }) "Лимит $(F $i.Nv.PowerLimitW '0') Вт; максимум $(F $i.Nv.PowerMaxW '0') Вт" 'сверить режим' 'Лимит сообщает драйвер; выберите одинаковый режим в утилите производителя (GiMATE / Control Center / MSI Center). Ватты не заменяют тест производительности.'
   $modules = @($i.RamModules | Where-Object { $_.SizeGB -gt 0 })
   $ramGB = ($modules | ForEach-Object { $_.SizeGB } | Measure-Object -Sum).Sum
   $state = 'не сверено'
   if (-not $modules.Count) { $state = 'нет данных' }
   elseif ($e.RamGB) { $state = if ($ramGB -ge $e.RamGB) { 'совпадает' } else { 'расхождение' } }
-  Add-Audit 'RAM: объём' $(if ($e.RamGB) { "$($e.RamGB) ГБ" } else { $unknown }) "$(F $ramGB) ГБ установлено; модулей $($modules.Count), слотов $($i.RamSlots)" $state 'Используется сумма ёмкостей планок, а не доступная Windows память. Без исходного объёма уменьшение ёмкости не определить.'
+  Add-Audit 'RAM: объём' $(if ($e.RamGB) { "Не менее $($e.RamGB) ГБ из задания" } else { $unknown }) "$(F $ramGB) ГБ установлено; модулей $($modules.Count), слотов $($i.RamSlots)" $state ('Используется сумма ёмкостей планок, а не доступная Windows память. ' + $(if ($profile.CapacityNote) { $profile.CapacityNote } else { 'Без исходного объёма уменьшение ёмкости не определить.' }))
   foreach ($m in $modules) {
     $state = 'не сверено'; $reason = 'Марка и артикул из SMBIOS. Происхождение планки и тайминги не подтверждены; иной производитель сам по себе не означает ухудшение.'
     if ($e.RamType) {
@@ -602,7 +628,7 @@ function Get-HardwareAudit($ctx, $profile) {
       if ($m.Type -ne $e.RamType -or ($m.SpeedMTs -gt 0 -and $m.SpeedMTs -lt $e.RamMTs)) { $state = 'проверить: ниже ориентира' }
       elseif (-not $m.SpeedMTs -or -not $m.RunMTs) { $state = 'данные неполные' }
       elseif ($m.RunMTs -lt $e.RamMTs) { $state = 'проверить: снижена скорость' }
-      $reason += ' DDR5-5600 — возможность платформы по GIGABYTE, не доказательство заводской поставки; снижение скорости также зависит от BIOS и сочетания планок.'
+      $reason += " $($e.RamType)-$($e.RamMTs) — возможность платформы по GIGABYTE, не доказательство заводской поставки; снижение скорости также зависит от BIOS и сочетания планок."
     }
     Add-Audit "RAM: $($m.Slot)" $(if ($e.RamType) { "$($e.RamType), ориентир до $($e.RamMTs) МТ/с" } else { $unknown }) "$($m.Vendor) $($m.Part); $($m.SizeGB) ГБ $($m.Type); паспорт $($m.SpeedMTs), работает $($m.RunMTs) МТ/с; S/N $($m.Serial)" $state $reason
   }
@@ -616,14 +642,14 @@ function Get-HardwareAudit($ctx, $profile) {
     $total = ($ssd | ForEach-Object { $_.SizeGB } | Measure-Object -Sum).Sum
     $state = 'не сверено'
     if ($e.DiskGB) { $state = if ($total -ge 0.90 * $e.DiskGB) { 'совпадает' } else { 'расхождение' } }
-    Add-Audit 'SSD: суммарная ёмкость' $(if ($e.DiskGB) { "$($e.DiskGB) ГБ из объявления" } else { $unknown }) "$(F $total '0') ГиБ; SSD/NVMe устройств: $($ssd.Count)" $state 'При сравнении с десятичными ГБ допускается 10% на пересчёт в ГиБ. SSD с неизвестным типом Windows может потребовать ручной сверки.'
+    Add-Audit 'SSD: суммарная ёмкость' $(if ($e.DiskGB) { "Не менее $($e.DiskGB) ГБ из задания" } else { $unknown }) "$(F $total '0') ГиБ; SSD/NVMe устройств: $($ssd.Count)" $state ('При сравнении с десятичными ГБ допускается 10% на пересчёт в ГиБ. SSD с неизвестным типом Windows может потребовать ручной сверки. ' + $profile.CapacityNote)
   }
   $screen = (@($i.Gpus | Where-Object { $_.Hz -and $_.Res -ne 'x' } | ForEach-Object { "$($_.Res) @ $($_.Hz) Гц" })) -join '; '
   $state = 'не сверено'
   if ($e.PanelHz) { $state = if (-not $i.PanelMaxHz) { 'нет данных' } elseif ($i.PanelMaxHz -lt $e.PanelHz) { 'проверить частоту' } else { 'сверить разрешение' } }
   Add-Audit 'Экран' $(if ($e.PanelRes) { "16 дюймов, IPS, $($e.PanelRes), $($e.PanelHz) Гц" } else { $unknown }) "$($i.Panel); EDID максимум $(F $i.PanelMaxHz '0') Гц; сейчас $screen" $state 'Текущий режим Windows не равен максимальному разрешению панели. Модель панели, IPS и цветовой охват требуют сверки; возможен внешний монитор.'
   Add-Audit 'Батарея' $(if ($e.BatteryMWh) { "$($e.BatteryMWh) мВт·ч по спецификации" } else { $unknown }) "$($ctx.Battery.Id); заводская $(F $ctx.Battery.DesignMWh '0'), полная $(F $ctx.Battery.FullMWh '0') мВт·ч" 'сверить ёмкость' 'DesignCapacity сообщает контроллер установленной батареи; износ не доказывает оригинальность или отсутствие замены.'
-  Add-Audit 'Блок питания' $(if ($e.Cpu) { '150 Вт по GIGABYTE' } else { $unknown }) 'Маркировка адаптера программно не читается' 'проверить руками' 'Сверьте выходное напряжение и ток на наклейке; номинальная мощность = В × А.'
+  Add-Audit 'Блок питания' $(if ($e.AdapterW) { "$($e.AdapterW) Вт по GIGABYTE" } else { $unknown }) 'Маркировка адаптера программно не читается' 'проверить руками' 'Сверьте выходное напряжение и ток на наклейке; номинальная мощность = В × А.'
   Add-Audit 'Сеть' $unknown ($i.Net -join '; ') 'не сверено' 'Показаны названия адаптеров Windows; для проверки замены нужна исходная модель.'
   return $rows
 }
@@ -921,6 +947,7 @@ Write-Host '   - подключите зарядку;'
 Write-Host '   - закройте программы;'
 Write-Host '   - выберите режим производительности (у MSI — Extreme Performance в MSI Center)'
 Write-Host '     (у GIGABYTE A16 — «Игры» / Performance в GiMATE)'
+Write-Host '     (у GIGABYTE G6X — Entertainment / Auto в Control Center для сравнения с обзором)'
 Write-Host '     и режим видеокарты — одинаковые для замеров, которые будете сравнивать.'
 Write-Host ''
 $labelIn = if ($Unattended) { $Label } else { Read-Host '  Метка отчёта (например «до чистки»), Enter — без метки' }
