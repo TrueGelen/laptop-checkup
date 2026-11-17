@@ -1,4 +1,4 @@
-# Run in Windows PowerShell 5.1: powershell -NoProfile -File tests\profiles.ps1
+﻿# Run in Windows PowerShell 5.1: powershell -NoProfile -File tests\profiles.ps1
 # Load only profile data and function definitions: never start hardware tests/UAC.
 $ErrorActionPreference = 'Stop'
 $source = Get-Content -LiteralPath (Join-Path $PSScriptRoot '..\checkup.ps1') -Raw -Encoding UTF8
@@ -112,6 +112,23 @@ try {
   $gpuVerdict = $script:Verdicts | Where-Object { $_.Text -match '2000' -and $_.Text -match '105' }
   Assert ($gpuVerdict.Level -eq 'info') 'GPU power below maximum TGP must remain informational'
   Assert ($gpuVerdict.Basis -notmatch 'A16') 'G6X GPU-power basis must not describe only A16'
+  Assert ($summary -match 'FPS не записан') 'Old reports must explicitly state that GPU performance loss was not measured'
+  $fpsLog = Join-Path $script:Rep 'furmark-gpu.txt'
+  1..100 | ForEach-Object {
+    $fps = if ($_ -le 10) { 200 } else { 100 }
+    "frame $($_ * 100) ; FPS: $fps ; dt: 5.000 ms ; time: $_.0 sec"
+  } | Set-Content -LiteralPath $fpsLog -Encoding ASCII
+  Copy-Item -LiteralPath $fpsLog -Destination (Join-Path $script:Rep 'furmark-combo.txt')
+  Build-Report $ctx | Out-Null
+  $fpsHtml = Get-Content (Join-Path $script:Rep 'report.html') -Raw -Encoding UTF8
+  $fpsSummary = Get-Content (Join-Path $script:Rep 'summary.txt') -Raw -Encoding UTF8
+  Assert ($fpsHtml -match 'снижение 50' -and $fpsSummary -match 'снижение 50') 'Both report formats must show the measured FPS loss'
+  foreach ($id in @('gpu', 'combo')) {
+    $csv = Join-Path $script:Rep "furmark-$id-fps.csv"
+    Assert (@(Import-Csv -LiteralPath $csv).Count -eq 100) "Preserve every valid FPS sample for $id"
+    Assert ($fpsHtml -match "href='furmark-$id-fps.csv'") "Link the $id FPS CSV in the HTML report"
+  }
+  Assert ($fpsSummary -notmatch 'FPS не записан') 'Measured runs must not claim FPS is missing'
   $ctx.Info.Model = 'Unknown'; $ctx.Info.Board = ''; $ctx.Info.Sku = ''
   Build-Report $ctx | Out-Null
   $unknown = Get-Content (Join-Path $script:Rep 'report.html') -Raw -Encoding UTF8

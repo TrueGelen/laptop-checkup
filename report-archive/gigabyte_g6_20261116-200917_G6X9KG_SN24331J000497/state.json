@@ -1,0 +1,48 @@
+﻿{
+    "Start":  "2026-11-16T20:09:17.1152572+03:00",
+    "MaxonExisted":  false,
+    "MaxonDocsExisted":  false,
+    "BatteryTmpExisted":  false,
+    "DiskspdFile":  "C:\\Users\\rak_v\\AppData\\Local\\Temp\\laptop-checkup-diskspd.dat",
+    "HkcuSoftware":  [
+                         "appdatalow",
+                         "ChangeTracker",
+                         "Chromium",
+                         "ControlCenter3.0",
+                         "Google",
+                         "Lesta Games",
+                         "Microsoft",
+                         "NVIDIA Corporation",
+                         "Policies",
+                         "QtProject",
+                         "Realtek",
+                         "RegisteredApplications",
+                         "SyncEngines",
+                         "TeamSpeak",
+                         "Trolltech",
+                         "Wow6432Node",
+                         "Classes"
+                     ],
+    "SamplerPid":  17536,
+    "GpuLogPid":  18768,
+    "ExtraPaths":  [
+
+                   ],
+    "CleanupDone":  true,
+    "CleanupLog":  [
+                       "остановлен powershell (17536)",
+                       "остановлен nvidia-smi (18768)",
+                       "удалён C:\\Users\\rak_v\\AppData\\Local\\Temp\\battery-report.xml",
+                       "удалена папка C:\\Users\\rak_v\\AppData\\Roaming\\Maxon (её не было до теста)",
+                       "удалена папка C:\\Users\\rak_v\\OneDrive\\Документы\\MAXON (её не было до теста)",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\DiskInfo.txt",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\DiskInfo.ini",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\Smart"
+                   ],
+    "NewItems":  [
+
+                 ],
+    "NewRegKeys":  [
+
+                   ]
+}

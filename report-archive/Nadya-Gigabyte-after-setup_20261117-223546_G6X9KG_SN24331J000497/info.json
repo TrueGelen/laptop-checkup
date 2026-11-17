@@ -1,0 +1,87 @@
+﻿{
+    "Manufacturer":  "GIGABYTE",
+    "Model":  "G6X9KG",
+    "Sku":  "C6L9KG",
+    "Serial":  "SN24331J000497",
+    "BiosVersion":  "FD09",
+    "BiosDate":  "2024-03-14",
+    "Board":  "G6X9KG",
+    "Os":  "Майкрософт Windows 11 Pro 10.0.26300",
+    "OsInstalled":  "2026-11-17",
+    "Cpu":  "13th Gen Intel(R) Core(TM) i7-13650HX",
+    "CpuCores":  14,
+    "CpuThreads":  20,
+    "RamTotalGB":  15.7,
+    "VirtFirmware":  false,
+    "Hypervisor":  true,
+    "RamModules":  [
+                       {
+                           "Slot":  "Controller0-ChannelA-DIMM0",
+                           "Bank":  "BANK 0",
+                           "SizeGB":  8,
+                           "Type":  "DDR5",
+                           "SpeedMTs":  4800,
+                           "RunMTs":  4800,
+                           "Vendor":  "Crucial Technology",
+                           "Part":  "CT8G56C46S5.C4D",
+                           "Serial":  "E9584A82"
+                       },
+                       {
+                           "Slot":  "Controller1-ChannelA-DIMM0",
+                           "Bank":  "BANK 0",
+                           "SizeGB":  8,
+                           "Type":  "DDR5",
+                           "SpeedMTs":  4800,
+                           "RunMTs":  4800,
+                           "Vendor":  "Crucial Technology",
+                           "Part":  "CT8G56C46S5.M4D1",
+                           "Serial":  "E951EB25"
+                       }
+                   ],
+    "RamSlots":  2,
+    "Gpus":  [
+                 {
+                     "Name":  "Intel(R) UHD Graphics",
+                     "Driver":  "32.0.101.7092",
+                     "Status":  "OK",
+                     "Res":  "1920x1200",
+                     "Hz":  165
+                 },
+                 {
+                     "Name":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+                     "Driver":  "32.0.16.2124",
+                     "Status":  "OK",
+                     "Res":  "x",
+                     "Hz":  null
+                 }
+             ],
+    "GpuMode":  "гибридный (MSHybrid/Optimus)",
+    "NvSmi":  true,
+    "Nv":  {
+               "Name":  "NVIDIA GeForce RTX 4060 Laptop GPU",
+               "Vbios":  "95.07.41.00.ab",
+               "Driver":  "621.24",
+               "PowerLimitW":  105,
+               "PowerDefaultW":  70,
+               "PowerMaxW":  105,
+               "MaxClockMHz":  3105,
+               "VramMiB":  8188
+           },
+    "Panel":  "BOE 0B77 \u0000",
+    "PanelMaxHz":  60,
+    "Net":  [
+                "Intel(R) Wi-Fi 6E AX211 160MHz — Up",
+                "Realtek PCIe GbE Family Controller — Disconnected"
+            ],
+    "Bluetooth":  [
+                      "Перечислитель Bluetooth LE (Майкрософт)",
+                      "Intel(R) Wireless Bluetooth(R)"
+                  ],
+    "ProblemDevices":  [
+
+                       ],
+    "SecureBoot":  true,
+    "Tpm":  "есть: True, готов: True",
+    "PowerScheme":  "GUID схемы питания: 381b4222-f694-41f0-9685-ff5bb260df2e  (Сбалансированная)",
+    "AcOnline":  true
+}

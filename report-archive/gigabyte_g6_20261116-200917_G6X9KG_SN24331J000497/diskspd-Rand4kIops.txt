@@ -1,0 +1,117 @@
+﻿
+Command Line: D:\laptop-checkup\tools\diskspd\amd64\diskspd.exe -c1G -b4K -r -d10 -o32 -t4 -W2 -Sh -w0 C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat
+
+Input parameters:
+
+  timespan:   1
+  -------------
+    duration: 10s
+    warm up time: 2s
+    cool down time: 0s
+    random seed: 0
+    affinity assignment: cpu order, fill groups, P-cores first
+    buffer separation: thread optimized (16MiB)
+    path: 'C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat'
+      think time: 0ms
+      burst size: 0
+      software cache disabled
+      hardware write cache disabled, writethrough on
+      performing read test
+      block size: 4KiB
+      using random I/O (alignment: 4KiB)
+      number of outstanding I/O operations per thread: 32
+      threads per file: 4
+      using I/O Completion Ports
+      IO priority: normal
+
+System information:
+
+  computer name:        G6X
+  processor name:       13th Gen Intel(R) Core(TM) i7-13650HX
+  start time:           2026/11/16 17:10:14 UTC
+  active power scheme:  ╨б╨▒╨░╨╗╨░╨╜╤Б╨╕╤А╨╛╨▓╨░╨╜╨╜╨░╤П (381b4222-f694-41f0-9685-ff5bb260df2e)
+  page size:            4KiB
+
+  cpu count:            20
+  core count:           14
+  group count:          1
+  node count:           1
+  socket count:         1
+  heterogeneous cores:  y
+
+  cache information:
+
+    Cache |   Size   | Line  | Assoc  | CPU
+    -------------------------------------------------------
+    L1d   |    48KiB |   64B | 12-way | 0-11 (per core)
+    L1i   |    32KiB |   64B |  8-way | 0-11 (per core)
+    L2    |  1.25MiB |   64B | 10-way | 0-11 (per core)
+    L3    |    24MiB |   64B | 12-way | 0-19
+    L1d   |    32KiB |   64B |  8-way | 12-19 (per cpu)
+    L1i   |    64KiB |   64B |  8-way | 12-19 (per cpu)
+    L2    |     2MiB |   64B | 16-way | 12-15
+    L2    |     2MiB |   64B | 16-way | 16-19
+
+Results for timespan 1:
+*******************************************************************************
+
+actual test time:	10.01s
+thread count:		4
+
+effective affinity (cpu): 0-3
+
+Core | Class | CPU |  Usage |  User  | Kernel |  Idle
+-------------------------------------------------------
+    0|     1P|    0| 100.00%|   1.09%|  98.91%|   0.00%
+    0|     1P|    1| 100.00%|   2.65%|  97.35%|   0.00%
+    1|     1P|    2| 100.00%|   1.87%|  98.13%|   0.00%
+    1|     1P|    3| 100.00%|   1.87%|  98.13%|   0.00%
+    2|     1P|    4|  48.83%|   0.16%|  48.67%|  51.17%
+    2|     1P|    5|   0.00%|   0.00%|   0.00%| 100.00%
+    3|     1P|    6|  41.09%|   0.47%|  40.62%|  58.91%
+    3|     1P|    7|   6.49%|   0.00%|   6.49%|  93.51%
+    4|     1P|    8|  10.92%|   0.16%|  10.76%|  89.08%
+    4|     1P|    9|   0.00%|   0.00%|   0.00%| 100.00%
+    5|     1P|   10|  17.19%|   0.00%|  17.19%|  82.81%
+    5|     1P|   11|   1.37%|   0.00%|   1.37%|  98.63%
+    6|     0 |   12|   0.00%|   0.00%|   0.00%| 100.00%
+    7|     0 |   13|   0.00%|   0.00%|   0.00%| 100.00%
+    8|     0 |   14|   3.11%|   0.47%|   2.64%|  96.89%
+    9|     0 |   15|   3.42%|   0.00%|   3.42%|  96.58%
+   10|     0 |   16|   4.68%|   0.16%|   4.52%|  95.32%
+   11|     0 |   17|   0.93%|   0.00%|   0.93%|  99.07%
+   12|     0 |   18|   0.78%|   0.00%|   0.78%|  99.22%
+   13|     0 |   19|   0.47%|   0.00%|   0.47%|  99.53%
+-------------------------------------------------------
+               avg.|  26.96%|   0.44%|  26.52%|  73.04%
+
+Total IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |      3198705664 |       780934 |     304.61 |   77978.88 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     1 |      3155017728 |       770268 |     300.44 |   76913.85 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     2 |      3151269888 |       769353 |     300.09 |   76822.48 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     3 |      3173601280 |       774805 |     302.21 |   77366.88 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:       12678594560 |      3095360 |    1207.35 |  309082.10
+
+Read IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |      3198705664 |       780934 |     304.61 |   77978.88 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     1 |      3155017728 |       770268 |     300.44 |   76913.85 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     2 |      3151269888 |       769353 |     300.09 |   76822.48 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     3 |      3173601280 |       774805 |     302.21 |   77366.88 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:       12678594560 |      3095360 |    1207.35 |  309082.10
+
+Write IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |               0 |            0 |       0.00 |       0.00 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     1 |               0 |            0 |       0.00 |       0.00 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     2 |               0 |            0 |       0.00 |       0.00 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+     3 |               0 |            0 |       0.00 |       0.00 | C:\Users\rak_v\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:                 0 |            0 |       0.00 |       0.00
+

@@ -1,1 +1,4 @@
 tools/cinebench/resource/modules/cinebench/cpu/cpu.c4d filter=lfs diff=lfs merge=lfs -text
+
+# Preserve archived measurement files byte for byte, including original line endings.
+/report-archive/** -text

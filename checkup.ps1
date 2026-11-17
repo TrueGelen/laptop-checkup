@@ -506,8 +506,57 @@ function Format-Passes($cb) {
 
 function Start-FurMark([int]$sec, [string]$outFile) {
   $exe = Join-Path $Tools 'furmark\FurMark_win64\furmark.exe'
-  $a = @('--demo', 'furmark-gl', '--width', '1280', '--height', '720', '--max-time', "$sec", '--no-score-box', '--hpgfx', '1', '--disable-traces')
+  # --disable-traces + --print-render-speed crashes this FurMark build (0xC0000005).
+  # Keep stdout in reports; Invoke-Cleanup removes native trace files from tools.
+  $a = @('--demo', 'furmark-gl', '--width', '1280', '--height', '720', '--max-time', "$sec", '--no-score-box', '--hpgfx', '1', '--print-render-speed')
   Start-Process -FilePath $exe -ArgumentList $a -WorkingDirectory (Split-Path $exe) -PassThru -RedirectStandardOutput $outFile -RedirectStandardError "$outFile.err"
+}
+
+# FurMark --print-render-speed: one current-FPS sample per second, not cumulative FPS.
+# Keep stdout as the primary log so a stopped run can be recovered with -ReportFrom.
+function Read-FurMarkFps([string]$path) {
+  if (-not (Test-Path -LiteralPath $path)) { return @() }
+  foreach ($line in (Get-Content -LiteralPath $path)) {
+    if ($line -match '^\s*frame\s+(\d+)\s*;\s*FPS:\s*([\d.]+)\s*;\s*dt:\s*([\d.]+)\s*ms\s*;\s*time:\s*([\d.]+)\s*sec\s*$') {
+      $frame = [long]$Matches[1]; $fps = ParseD $Matches[2]
+      $dt = ParseD $Matches[3]; $sec = ParseD $Matches[4]
+      # The first frame has FPS=0 because no measurement interval has elapsed yet.
+      if ($null -ne $fps -and $fps -gt 0 -and $null -ne $sec -and $sec -gt 0 -and $null -ne $dt) {
+        [pscustomobject]@{ time_sec = $sec; frame = $frame; fps = $fps; last_frame_ms = $dt }
+      }
+    }
+  }
+}
+
+function Get-FpsSummary($samples) {
+  $samples = @($samples | Sort-Object time_sec)
+  if (-not $samples.Count) { return $null }
+  $stats = Get-Stat $samples 'fps'
+  $result = [pscustomobject]@{
+    Avg = $stats.Avg; Min = $stats.Min; Max = $stats.Max; Count = $samples.Count
+    First = $null; Last = $null; DropPct = $null; WindowSec = $null
+  }
+  $duration = $samples[-1].time_sec - $samples[0].time_sec
+  # Avoid drawing a warm-up conclusion from just a few seconds or sparse output.
+  if ($samples.Count -ge 10 -and $duration -ge 10) {
+    $window = $duration * 0.1
+    $first = Get-Stat @($samples | Where-Object { $_.time_sec -le $samples[0].time_sec + $window }) 'fps'
+    $last = Get-Stat @($samples | Where-Object { $_.time_sec -ge $samples[-1].time_sec - $window }) 'fps'
+    if ($first.N -ge 2 -and $last.N -ge 2) {
+      $result.First = $first.Avg; $result.Last = $last.Avg
+      $result.DropPct = 100 * ($first.Avg - $last.Avg) / $first.Avg
+      $result.WindowSec = $window
+    }
+  }
+  return $result
+}
+
+function Get-ReportFolderName([datetime]$started, [string]$model, [string]$serial, [string]$label) {
+  $safe = { param($value) ($value -replace '[^\w\-]+', '_').Trim('_') }
+  $name = '{0}_{1}_{2}' -f $started.ToString('yyyyMMdd-HHmmss'), (& $safe $model), (& $safe $serial)
+  $prefix = & $safe $label
+  if ($prefix) { $name = $prefix + '_' + $name }
+  return $name
 }
 
 # =====================================================================
@@ -803,6 +852,25 @@ function Build-Report($ctx) {
     V $lvl 'Видеокарта: мощность под нагрузкой' $txt
   } else { V 'info' 'Видеокарта: температура' 'Нет пригодных показаний температуры при загрузке GPU ≥90%; оценка не выполнена.' }
 
+  # FPS comes from FurMark itself; nvidia-smi does not measure rendering speed.
+  foreach ($test in @(@{ Id = 'gpu'; Name = 'GPU' }, @{ Id = 'combo'; Name = 'CPU+GPU' })) {
+    $samples = @(Read-FurMarkFps (Join-Path $script:Rep ("furmark-{0}.txt" -f $test.Id)))
+    $fps = Get-FpsSummary $samples
+    $what = "Видеокарта: FPS (FurMark, $($test.Name))"
+    $basis = 'FurMark GL, 1280x720; FPS примерно раз в секунду. Начало/конец — средние первых/последних 10% времени записанных отсчётов. Минимум относится к секундным отсчётам, это не 1% low. Изменение внутри прогона не равно потере относительно работы без теплового ограничения или потере FPS в играх.'
+    if ($fps) {
+      $samples | Export-Csv -LiteralPath (Join-Path $script:Rep ("furmark-{0}-fps.csv" -f $test.Id)) -NoTypeInformation -Encoding UTF8
+      $text = 'средний {0}, мин/макс {1}/{2}; отсчётов {3}' -f (F $fps.Avg), (F $fps.Min), (F $fps.Max), $fps.Count
+      if ($null -ne $fps.DropPct) {
+        $change = if ($fps.DropPct -gt 0) { 'снижение {0}%' -f (F $fps.DropPct) }
+                  elseif ($fps.DropPct -lt 0) { 'рост {0}%' -f (F (-$fps.DropPct)) }
+                  else { 'без изменения' }
+        $text += '; начало {0} → конец {1} FPS ({2}; окна по {3} с)' -f (F $fps.First), (F $fps.Last), $change, (F $fps.WindowSec)
+      } else { $text += '; недостаточно отсчётов для сравнения начала и конца' }
+      V 'info' $what $text $basis
+    } else { V 'info' $what 'FPS не записан; величину потери производительности GPU по этим данным определить нельзя.' $basis }
+  }
+
   # зарядка под совместной нагрузкой
   $cPh = $ph['combo']
   $cs = Get-Slice $sens $cPh 0 1
@@ -955,9 +1023,7 @@ $labelIn = if ($Unattended) { $Label } else { Read-Host '  Метка отчёт
 $started = Get-Date
 $infoQuick = Get-CimInstance Win32_ComputerSystem
 $serialQ = "$((Get-CimInstance Win32_BIOS).SerialNumber)".Trim()
-$safe = { param($s) ($s -replace '[^\w\-]+', '_').Trim('_') }
-$name = '{0}_{1}_{2}' -f $started.ToString('yyyyMMdd-HHmmss'), (& $safe "$($infoQuick.Model)"), (& $safe $serialQ)
-if ($labelIn) { $name += '_' + (& $safe $labelIn) }
+$name = Get-ReportFolderName $started "$($infoQuick.Model)" $serialQ $labelIn
 $script:Rep = Join-Path (Join-Path $Root 'reports') $name
 New-Item -ItemType Directory -Path $script:Rep -Force | Out-Null
 $script:LogFile = Join-Path $script:Rep 'run.log'
@@ -1071,7 +1137,7 @@ finally {
 
 try {
   Say 'Готовлю отчёт…'
-  # пустые выводы (FurMark в stdout не пишет) только загромождают папку
+  # Пустые выводы не сохраняем; непустые журналы FPS FurMark остаются в отчёте.
   Get-ChildItem -LiteralPath $script:Rep -File | Where-Object { $_.Length -eq 0 } | Remove-Item -Force -ErrorAction SilentlyContinue
   Show-Summary (Build-Report (Import-Ctx $script:Rep))
   Say "Отчёт: $(Join-Path $script:Rep 'report.html')" 'Cyan'

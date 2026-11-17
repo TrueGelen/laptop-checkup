@@ -1,0 +1,10 @@
+frame 1 ; FPS: 0 ; dt: 0.001 ms ; time: 0.0 sec
+frame 151 ; FPS: 151 ; dt: 9.632 ms ; time: 1.0 sec
+frame 339 ; FPS: 188 ; dt: 5.158 ms ; time: 2.0 sec
+frame 526 ; FPS: 187 ; dt: 10.343 ms ; time: 3.0 sec
+frame 712 ; FPS: 186 ; dt: 10.326 ms ; time: 4.0 sec
+frame 897 ; FPS: 185 ; dt: 5.499 ms ; time: 5.0 sec
+[ Demo Quick Stats ]
+- frames               : 1075
+- duration             : 6006 ms
+- FPS (min/avg/max)    : 151 / 178 / 188
