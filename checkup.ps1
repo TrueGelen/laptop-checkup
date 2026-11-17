@@ -731,6 +731,67 @@ function Import-Ctx([string]$dir) {
   return $ctx
 }
 
+# Compact numeric series for the self-contained offline HTML charts.
+function Get-ChartNumber($value, [double]$min = 0, [double]$max = 1000000) {
+  $n = ParseD $value
+  if ($null -eq $n -or [double]::IsNaN($n) -or [double]::IsInfinity($n) -or $n -lt $min -or $n -gt $max) { return $null }
+  return $n
+}
+
+function Get-ChartData($ctx, $sens, $gpu) {
+  $times = @(@($sens) + @($gpu) | Where-Object { $_.T } | ForEach-Object { $_.T } | Sort-Object)
+  $origin = if ($times.Count) { $times[0] } else { $ctx.Started }
+  $duration = if ($times.Count) { [math]::Max(1, ($times[-1] - $origin).TotalSeconds) } else { 1 }
+  $cpuPoints = New-Object System.Collections.ArrayList
+  foreach ($r in $sens) {
+    if (-not $r.T) { continue }
+    [void]$cpuPoints.Add(@([math]::Round(($r.T - $origin).TotalSeconds, 3),
+      (Get-ChartNumber $r.cpu_mhz 0 20000), (Get-ChartNumber $r.cpu_util_pct 0 1000), (Get-ChartNumber $r.tz_max_c 1 150)))
+  }
+  $gpuPoints = New-Object System.Collections.ArrayList
+  foreach ($r in $gpu) {
+    if (-not $r.T) { continue }
+    $thermal = $null
+    if ("$($r.reasons)".Trim() -match '^0x[0-9a-fA-F]+$') {
+      $thermal = [int](((Get-Reasons $r) -band 0x60) -ne 0 -and (ParseD $r.util) -ge 90)
+    }
+    [void]$gpuPoints.Add(@([math]::Round(($r.T - $origin).TotalSeconds, 3),
+      (Get-ChartNumber $r.temp 1 150), (Get-ChartNumber $r.clock 0 20000),
+      (Get-ChartNumber $r.power), (Get-ChartNumber $r.util 0 100), $thermal, (Get-ChartNumber $r.limit)))
+  }
+  $phaseNames = @{ idle = 'Простой'; cpu = 'CPU'; 'cpu-single' = 'CPU Single'; cool1 = 'Остывание'; gpu = 'GPU'; cool2 = 'Остывание'; combo = 'CPU+GPU' }
+  $phases = New-Object System.Collections.ArrayList
+  foreach ($phase in $ctx.Phases) {
+    if (-not $phase.Start) { continue }
+    $start = [math]::Max(0, ($phase.Start - $origin).TotalSeconds)
+    $end = if ($phase.End) { [math]::Max(0, ($phase.End - $origin).TotalSeconds) } else { $duration }
+    $duration = [math]::Max($duration, $end)
+    $name = if ($phaseNames.ContainsKey($phase.Name)) { $phaseNames[$phase.Name] } else { $phase.Name }
+    [void]$phases.Add(@{ id = $phase.Name; label = $name; start = $start; end = $end })
+  }
+  $fpsSeries = New-Object System.Collections.ArrayList
+  $cbSeries = New-Object System.Collections.ArrayList
+  foreach ($test in @(@{ Id = 'gpu'; Name = 'GPU'; Cb = $ctx.CbMulti; CbName = 'CPU' },
+                       @{ Id = 'combo'; Name = 'CPU+GPU'; Cb = $ctx.CbCombo; CbName = 'CPU+GPU' })) {
+    $points = New-Object System.Collections.ArrayList
+    foreach ($r in @(Read-FurMarkFps (Join-Path $script:Rep ("furmark-{0}.txt" -f $test.Id)))) {
+      [void]$points.Add(@($r.time_sec, $r.fps))
+    }
+    [void]$fpsSeries.Add(@{ id = $test.Id; label = $test.Name; points = @($points.ToArray()) })
+    $passes = New-Object System.Collections.ArrayList
+    $i = 0
+    foreach ($score in @($test.Cb.Passes)) {
+      $n = Get-ChartNumber $score
+      if ($null -ne $n) { $i++; [void]$passes.Add(@($i, $n)) }
+    }
+    $label = $test.CbName
+    if ($test.Cb.Incomplete) { $label += ' (тест прерван)' }
+    [void]$cbSeries.Add(@{ label = $label; points = @($passes.ToArray()) })
+  }
+  return @{ duration = $duration; phases = @($phases.ToArray()); cpu = @($cpuPoints.ToArray());
+    gpu = @($gpuPoints.ToArray()); fps = @($fpsSeries.ToArray()); cinebench = @($cbSeries.ToArray()) }
+}
+
 function Build-Report($ctx) {
   $info = $ctx.Info; $bat = $ctx.Battery; $disk = $ctx.Disk; $spd = $ctx.Speed
   $prof = Find-Profile $info
@@ -941,6 +1002,12 @@ function Build-Report($ctx) {
       "<p class='mut'>Обзоры обычно дают один прогон Cinebench «на холодную», а наш тест идёт 10 минут: с обзором сравнивайте первый проход. Средняя за 10 минут ниже — это нормально, если просадка небольшая.</p>"
   }
 
+  $chartJson = Get-ChartData $ctx $sens $gpu | ConvertTo-Json -Depth 8 -Compress
+  # Prevent metadata from closing the inline JSON script element.
+  $chartJson = $chartJson.Replace('&', '\u0026').Replace('<', '\u003c').Replace('>', '\u003e')
+  $chartJs = Get-Content -LiteralPath (Join-Path $Root 'report-charts.js') -Raw -Encoding UTF8
+  $chartCss = Get-Content -LiteralPath (Join-Path $Root 'report-charts.css') -Raw -Encoding UTF8
+
   $html = @"
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Проверка ноутбука</title>
@@ -953,9 +1020,15 @@ table{border-collapse:collapse;width:100%;margin:6px 0} td,th{border-bottom:1px 
 th{color:var(--mut);font-weight:600} .tag{color:#fff;border-radius:10px;padding:1px 8px;font-size:12px;white-space:nowrap}
 .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px} .wrap{overflow-x:auto}
 pre{white-space:pre-wrap;font-size:13px}
+$chartCss
 </style></head><body>
 <h1>$(HtmlEnc "$($info.Manufacturer) $($info.Model)")</h1>
 <div class="mut">S/N $(HtmlEnc $info.Serial) · BIOS $(HtmlEnc $info.BiosVersion) ($(HtmlEnc $info.BiosDate)) · $(HtmlEnc $ctx.Started.ToString('yyyy-MM-dd HH:mm')) · режим $($ctx.Mode)$(if ($ctx.Label) { ' · ' + (HtmlEnc $ctx.Label) })</div>
+<nav class="report-tabs" role="tablist" aria-label="Разделы отчёта" hidden>
+<button id="tab-report" type="button" role="tab" aria-controls="panel-report" aria-selected="true">Отчёт</button>
+<button id="tab-charts" type="button" role="tab" aria-controls="panel-charts" aria-selected="false" tabindex="-1">Графики</button>
+</nav>
+<section id="panel-report" role="tabpanel" aria-labelledby="tab-report">
 $(if ($recoveryNotes) { "<h2>Примечания к восстановленному отчёту</h2><div class='card'><pre>$(HtmlEnc $recoveryNotes)</pre></div>" })
 <h2>Итог</h2><div class="wrap"><table><tr><th>Оценка</th><th>Что</th><th>Измерено</th><th>Референс и основание оценки</th></tr>$rowsV</table></div>
 <h2>Сверка комплектующих</h2>
@@ -979,6 +1052,27 @@ $refs
 <h2>Сводка (для отправки)</h2><div class="card"><pre>$(HtmlEnc ($sum -join "`n"))</pre></div>
 <h2>Проверить руками</h2><div class="card">Петли и корпус · битые пиксели и засветы · клавиатура и тачпад · порты · звук, микрофон, камера · Wi-Fi/Bluetooth · пароль BIOS · отвязка учётной записи Microsoft</div>
 <h2>Файлы</h2><ul>$files</ul>
+</section>
+<section id="panel-charts" role="tabpanel" aria-labelledby="tab-charts" hidden>
+<h2>Графики замера</h2>
+<p class="mut">Выберите этап и наведите на график, чтобы увидеть значения. У датчиков общая шкала времени от начала записи; пропуски данных показаны разрывами линий.</p>
+<div class="chart-toolbar"><label for="chart-phase">Этап</label> <select id="chart-phase"><option value="all">Весь замер</option></select></div>
+<div id="chart-phase-legend" class="chart-legend"></div>
+<h2>Процессор</h2>
+<p class="mut">Температура — ACPI-зона прошивки, не CPU Package. Частота — общий показатель Windows; отдельные ядра могут работать иначе. Загрузка CPU по счётчику Windows может превышать 100% при Turbo.</p>
+<div id="cpu-charts" class="chart-grid"></div>
+<h2>Видеокарта</h2>
+<p class="mut">Красная полоса внизу графиков — тепловое ограничение GPU при загрузке ≥90%. Длительность ограничения не показывает величину потери FPS.</p>
+<div id="gpu-charts" class="chart-grid"></div>
+<h2>Производительность в тестах</h2>
+<p class="mut">Здесь отдельные шкалы: Cinebench — номер прохода; FPS — секунды от начала рендеринга сцены FurMark. Фильтр этапов выше относится к датчикам. Минимальный секундный FPS не равен 1% low.</p>
+<div id="performance-charts" class="chart-grid"></div>
+</section>
+<noscript><p>Для интерактивной вкладки «Графики» включите JavaScript в браузере. Обычный отчёт доступен выше.</p></noscript>
+<script id="chart-data" type="application/json">$chartJson</script>
+<script>
+$chartJs
+</script>
 </body></html>
 "@
   $html | Set-Content -LiteralPath (Join-Path $script:Rep 'report.html') -Encoding UTF8

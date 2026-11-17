@@ -14,7 +14,7 @@ from pathlib import Path
 import sys
 source, stage = map(Path, sys.argv[1:])
 bom_files = ('checkup.ps1', 'sampler.ps1', 'README.txt', 'START-HERE.txt', 'BIOS-AND-INSPECTION.txt')
-for name in bom_files + ('RUN.cmd', 'RUN-QUICK.cmd', 'CLEANUP.cmd'):
+for name in bom_files + ('RUN.cmd', 'RUN-QUICK.cmd', 'CLEANUP.cmd', 'report-charts.js', 'report-charts.css'):
     text = (source / name).read_text(encoding='utf-8-sig')
     data = text.replace('\r\n', '\n').replace('\n', '\r\n').encode('utf-8')
     (stage / name).write_bytes((b'\xef\xbb\xbf' if name in bom_files else b'') + data)

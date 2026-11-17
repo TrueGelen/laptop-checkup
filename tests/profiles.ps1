@@ -1,6 +1,7 @@
 ﻿# Run in Windows PowerShell 5.1: powershell -NoProfile -File tests\profiles.ps1
 # Load only profile data and function definitions: never start hardware tests/UAC.
 $ErrorActionPreference = 'Stop'
+$Root = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
 $source = Get-Content -LiteralPath (Join-Path $PSScriptRoot '..\checkup.ps1') -Raw -Encoding UTF8
 $tokens = $null; $errors = $null
 $ast = [Management.Automation.Language.Parser]::ParseInput($source, [ref]$tokens, [ref]$errors)
@@ -129,9 +130,23 @@ try {
     Assert ($fpsHtml -match "href='furmark-$id-fps.csv'") "Link the $id FPS CSV in the HTML report"
   }
   Assert ($fpsSummary -notmatch 'FPS не записан') 'Measured runs must not claim FPS is missing'
+  Assert ($fpsHtml -match 'id="panel-charts"' -and $fpsHtml -match 'role="tab"') 'The HTML report must include an accessible charts tab'
+  $jsonMatch = [regex]::Match($fpsHtml, '(?s)<script id="chart-data" type="application/json">(.*?)</script>')
+  $chartData = $jsonMatch.Groups[1].Value | ConvertFrom-Json
+  Assert ($chartData.gpu.Count -eq 3 -and $chartData.fps[0].points.Count -eq 100) 'Embed real sensor and FPS data in the standalone report'
+  Assert ($fpsHtml -notmatch '<script[^>]+src=|<link[^>]+href=') 'Charts must work offline without external JS or CSS'
+
   $ctx.Info.Model = 'Unknown'; $ctx.Info.Board = ''; $ctx.Info.Sku = ''
   Build-Report $ctx | Out-Null
   $unknown = Get-Content (Join-Path $script:Rep 'report.html') -Raw -Encoding UTF8
   Assert ($unknown -notmatch '818851|GDDR6|GDDR7') 'Unknown laptops must not inherit model-specific expectations'
+  $unsafeName = '</script><script id="injected">'
+  $ctx.Phases += @{ Name = $unsafeName; Start = $sampleStart; End = $sampleStart.AddSeconds(10) }
+  Build-Report $ctx | Out-Null
+  $safeHtml = Get-Content (Join-Path $script:Rep 'report.html') -Raw -Encoding UTF8
+  $safeJson = [regex]::Match($safeHtml, '(?s)<script id="chart-data" type="application/json">(.*?)</script>').Groups[1].Value
+  Assert ($safeHtml -notmatch '<script id="injected">') 'Metadata must not escape the inline JSON script element'
+  Assert (($safeJson | ConvertFrom-Json).phases[1].id -eq $unsafeName) 'Escaping must preserve metadata when parsed as JSON'
+
 } finally { Remove-Item -LiteralPath $script:Rep -Recurse -Force }
 Write-Host "PASS: $script:checks profile/audit/report checks (PowerShell $($PSVersionTable.PSVersion))"
