@@ -1,0 +1,108 @@
+﻿
+Command Line: E:\laptop-checkup\tools\diskspd\amd64\diskspd.exe -c1G -b1M -d10 -o8 -t1 -W2 -Sh -w0 C:\Users\npron\AppData\Local\Temp\laptop-checkup-diskspd.dat
+
+Input parameters:
+
+  timespan:   1
+  -------------
+    duration: 10s
+    warm up time: 2s
+    cool down time: 0s
+    random seed: 0
+    affinity assignment: cpu order, fill groups, P-cores first
+    buffer separation: thread optimized (16MiB)
+    path: 'C:\Users\npron\AppData\Local\Temp\laptop-checkup-diskspd.dat'
+      think time: 0ms
+      burst size: 0
+      software cache disabled
+      hardware write cache disabled, writethrough on
+      performing read test
+      block size: 1MiB
+      using sequential I/O (stride: 1MiB)
+      number of outstanding I/O operations per thread: 8
+      threads per file: 1
+      using I/O Completion Ports
+      IO priority: normal
+
+System information:
+
+  computer name:        Nadya
+  processor name:       13th Gen Intel(R) Core(TM) i7-13650HX
+  start time:           2026/11/17 19:36:23 UTC
+  active power scheme:  ╨б╨▒╨░╨╗╨░╨╜╤Б╨╕╤А╨╛╨▓╨░╨╜╨╜╨░╤П (381b4222-f694-41f0-9685-ff5bb260df2e)
+  page size:            4KiB
+
+  cpu count:            20
+  core count:           14
+  group count:          1
+  node count:           1
+  socket count:         1
+  heterogeneous cores:  y
+
+  cache information:
+
+    Cache |   Size   | Line  | Assoc  | CPU
+    -------------------------------------------------------
+    L1d   |    48KiB |   64B | 12-way | 0-11 (per core)
+    L1i   |    32KiB |   64B |  8-way | 0-11 (per core)
+    L2    |  1.25MiB |   64B | 10-way | 0-11 (per core)
+    L3    |    24MiB |   64B | 12-way | 0-19
+    L1d   |    32KiB |   64B |  8-way | 12-19 (per cpu)
+    L1i   |    64KiB |   64B |  8-way | 12-19 (per cpu)
+    L2    |     2MiB |   64B | 16-way | 12-15
+    L2    |     2MiB |   64B | 16-way | 16-19
+
+Results for timespan 1:
+*******************************************************************************
+
+actual test time:	10.00s
+thread count:		1
+
+effective affinity (cpu): 0
+
+Core | Class | CPU |  Usage |  User  | Kernel |  Idle
+-------------------------------------------------------
+    0|     1P|    0|  31.72%|   8.44%|  23.28%|  68.28%
+    0|     1P|    1|   0.00%|   0.00%|   0.00%| 100.00%
+    1|     1P|    2|   0.00%|   0.00%|   0.00%| 100.00%
+    1|     1P|    3|   0.00%|   0.00%|   0.00%| 100.00%
+    2|     1P|    4|   1.48%|   0.40%|   1.08%|  98.52%
+    2|     1P|    5|   1.69%|   0.34%|   1.35%|  98.31%
+    3|     1P|    6|   2.02%|   0.62%|   1.40%|  97.98%
+    3|     1P|    7|   0.00%|   0.00%|   0.00%| 100.00%
+    4|     1P|    8|   0.00%|   0.00%|   0.00%| 100.00%
+    4|     1P|    9|   0.00%|   0.00%|   0.00%| 100.00%
+    5|     1P|   10|   0.00%|   0.00%|   0.00%| 100.00%
+    5|     1P|   11|   0.00%|   0.00%|   0.00%| 100.00%
+    6|     0 |   12|   0.62%|   0.47%|   0.16%|  99.38%
+    7|     0 |   13|   0.00%|   0.00%|   0.00%| 100.00%
+    8|     0 |   14|   0.00%|   0.00%|   0.00%| 100.00%
+    9|     0 |   15|   0.00%|   0.00%|   0.00%| 100.00%
+   10|     0 |   16|   0.00%|   0.00%|   0.00%| 100.00%
+   11|     0 |   17|   0.31%|   0.31%|   0.00%|  99.69%
+   12|     0 |   18|   0.73%|   0.58%|   0.15%|  99.27%
+   13|     0 |   19|   0.31%|   0.16%|   0.16%|  99.69%
+-------------------------------------------------------
+               avg.|   1.94%|   0.57%|   1.38%|  98.06%
+
+Total IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |     70397198336 |        67136 |    6711.87 |    6711.87 | C:\Users\npron\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:       70397198336 |        67136 |    6711.87 |    6711.87
+
+Read IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |     70397198336 |        67136 |    6711.87 |    6711.87 | C:\Users\npron\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:       70397198336 |        67136 |    6711.87 |    6711.87
+
+Write IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |               0 |            0 |       0.00 |       0.00 | C:\Users\npron\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:                 0 |            0 |       0.00 |       0.00
+
