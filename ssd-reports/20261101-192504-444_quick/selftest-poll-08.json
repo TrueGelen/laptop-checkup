@@ -1,0 +1,52 @@
+﻿{
+    "json_format_version":  [
+                                1,
+                                0
+                            ],
+    "smartctl":  {
+                     "version":  [
+                                     7,
+                                     5
+                                 ],
+                     "pre_release":  false,
+                     "svn_revision":  "5714",
+                     "platform_info":  "x86_64-w64-mingw32-w11-b26200",
+                     "build_info":  "(AppVeyor)",
+                     "argv":  [
+                                  "smartctl",
+                                  "--json=o",
+                                  "-l",
+                                  "selftest",
+                                  "/dev/pd0"
+                              ],
+                     "output":  [
+                                    "smartctl 7.5 2025-04-30 r5714 [x86_64-w64-mingw32-w11-b26200] (AppVeyor)",
+                                    "Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org",
+                                    "",
+                                    "=== START OF SMART DATA SECTION ===",
+                                    "Self-test Log (NVMe Log 0x06, NSID 0xffffffff)",
+                                    "Self-test status: Short self-test in progress (50% completed)",
+                                    "No Self-tests Logged",
+                                    ""
+                                ],
+                     "exit_status":  0
+                 },
+    "local_time":  {
+                       "time_t":  1793550347,
+                       "asctime":  "Sun Nov 01 19:25:47 2026 RTZ"
+                   },
+    "device":  {
+                   "name":  "/dev/pd0",
+                   "info_name":  "/dev/pd0",
+                   "type":  "nvme",
+                   "protocol":  "NVMe"
+               },
+    "nvme_self_test_log":  {
+                               "nsid":  -1,
+                               "current_self_test_operation":  {
+                                                                   "value":  1,
+                                                                   "string":  "Short self-test in progress"
+                                                               },
+                               "current_self_test_completion_percent":  50
+                           }
+}

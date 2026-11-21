@@ -1,0 +1,48 @@
+﻿{
+    "Start":  "2026-11-01T18:09:40.1768845+03:00",
+    "MaxonExisted":  false,
+    "MaxonDocsExisted":  false,
+    "BatteryTmpExisted":  false,
+    "DiskspdFile":  "C:\\Users\\TestName\\AppData\\Local\\Temp\\laptop-checkup-diskspd.dat",
+    "HkcuSoftware":  [
+                         "AMD",
+                         "appdatalow",
+                         "ChangeTracker",
+                         "GBStableDiffusion",
+                         "GCC",
+                         "Google",
+                         "IM Providers",
+                         "Microsoft",
+                         "NVIDIA Corporation",
+                         "Policies",
+                         "Realtek",
+                         "RegisteredApplications",
+                         "Wow6432Node",
+                         "Classes"
+                     ],
+    "SamplerPid":  7356,
+    "GpuLogPid":  14364,
+    "ExtraPaths":  [
+
+                   ],
+    "CleanupDone":  true,
+    "CleanupLog":  [
+                       "остановлен powershell (7356)",
+                       "остановлен nvidia-smi (14364)",
+                       "удалён C:\\Users\\TestName\\AppData\\Local\\Temp\\battery-report.xml",
+                       "удалена папка C:\\Users\\TestName\\AppData\\Roaming\\Maxon (её не было до теста)",
+                       "удалена папка C:\\Users\\TestName\\Documents\\MAXON (её не было до теста)",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\DiskInfo.txt",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\DiskInfo.ini",
+                       "удалён D:\\laptop-checkup\\tools\\cdi\\Smart"
+                   ],
+    "NewItems":  [
+                     "C:\\Users\\TestName\\AppData\\Local\\Temp\\msedgeedge_BITS_2280_990054126",
+                     "C:\\Users\\TestName\\AppData\\Local\\Temp\\WinGet",
+                     "C:\\Users\\TestName\\AppData\\Local\\Temp\\mat-debug-7396.log",
+                     "C:\\Users\\TestName\\AppData\\Local\\Temp\\wsu77F9.tmp"
+                 ],
+    "NewRegKeys":  [
+                       "ATI"
+                   ]
+}

@@ -1,0 +1,5 @@
+﻿smartctl 7.5 2025-04-30 r5714 [x86_64-w64-mingw32-w11-b26200] (AppVeyor)
+Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org
+
+Self-test has begun (NSID 0xffffffff)
+Use smartctl -X to abort test

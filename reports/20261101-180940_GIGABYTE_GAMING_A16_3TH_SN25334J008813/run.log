@@ -1,0 +1,36 @@
+﻿18:09:41  Отчёт: D:\laptop-checkup\reports\20261101-180940_GIGABYTE_GAMING_A16_3TH_SN25334J008813
+18:09:41  Собираю сведения о ноутбуке…
+18:09:47    GIGABYTE GIGABYTE GAMING A16 3TH, S/N SN25334J008813; AMD Ryzen 7 260 w/ Radeon 780M Graphics; GPU: только дискретная (MUX)
+18:09:47  Батарея…
+18:09:47    ёмкость 97.5% от заводской, циклов 11
+18:09:47  Накопители (SMART)…
+18:10:13    GIGABYTE AG450E1024-SI [NVMe]: Healthy, износ 0%, — ч
+18:10:13    Generic Flash Disk [USB]: Healthy, износ 0%, — ч
+18:10:13  Скорость SSD (DiskSpd)…
+18:10:52    чтение 6722 МБ/с, запись 4578 МБ/с, 4K 306025 IOPS
+18:10:52  Простой 120 с (фон для сравнения)…
+18:12:53  Процессор: Cinebench R23 Multi, не меньше 600 с…
+18:32:58    Cinebench R23 Multi — превышено время, останавливаю
+18:32:59    результат: —
+18:33:59  Видеокарта: FurMark 600 с…
+18:45:09  Совместная нагрузка CPU + GPU 600 с…
+18:55:32  Уборка…
+18:55:39    остановлен powershell (7356)
+18:55:39    остановлен nvidia-smi (14364)
+18:55:39    удалён C:\Users\TestName\AppData\Local\Temp\battery-report.xml
+18:55:39    удалена папка C:\Users\TestName\AppData\Roaming\Maxon (её не было до теста)
+18:55:39    удалена папка C:\Users\TestName\Documents\MAXON (её не было до теста)
+18:55:39    удалён D:\laptop-checkup\tools\cdi\DiskInfo.txt
+18:55:39    удалён D:\laptop-checkup\tools\cdi\DiskInfo.ini
+18:55:39    удалён D:\laptop-checkup\tools\cdi\Smart
+18:55:39  Появилось за время теста (не удалялось — могли создать другие программы):
+18:55:39    C:\Users\TestName\AppData\Local\Temp\msedgeedge_BITS_2280_990054126
+18:55:39    C:\Users\TestName\AppData\Local\Temp\WinGet
+18:55:39    C:\Users\TestName\AppData\Local\Temp\mat-debug-7396.log
+18:55:39    C:\Users\TestName\AppData\Local\Temp\wsu77F9.tmp
+18:55:39    HKCU\Software\ATI
+18:55:39  Готовлю отчёт…
+18:55:40  Ошибка при сборке отчёта: Не удается преобразовать значение "System.Object[]" типа "System.Object[]" в тип "System.Double".
+18:55:40  в F, D:\laptop-checkup\checkup.ps1: строка 113
+в Build-Report, D:\laptop-checkup\checkup.ps1: строка 700
+в <ScriptBlock>, D:\laptop-checkup\checkup.ps1: строка 1034

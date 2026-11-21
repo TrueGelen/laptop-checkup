@@ -1,0 +1,46 @@
+﻿SSD QUICK CHECK — collected
+SSD: GIGABYTE AG450E1024-SI; S/N 511250515100010150
+Начало: 2026-11-01T19:25:03.1582578+03:00
+Конец: 2026-11-01T19:26:40.5608963+03:00
+
+Встроенный тест: passed — Completed without error
+Проверка чтением: completed — 64 sampled 1 MiB reads and 1 GiB sequential read completed. This is not a full-surface or data-integrity verification.
+
+SMART после проверки:
+
+
+Serial           : 511250515100010150
+Model            : GIGABYTE AG450E1024-SI
+PowerCycles      : 32628
+UnsafeShutdowns  : 15945
+PowerOnHours     : 293
+PercentageUsed   : 2
+MediaErrors      : 0
+ErrorLogEntries  : 0
+CriticalWarning  : 0
+TemperatureC     : 44
+DataUnitsRead    : 6707411
+DataUnitsWritten : 10233947
+
+
+
+
+Изменения SMART за этот запуск:
+
+
+Serial           : 511250515100010150
+PowerCycles      : 0
+UnsafeShutdowns  : 0
+PowerOnHours     : 0
+MediaErrors      : 0
+ErrorLogEntries  : 0
+DataUnitsRead    : 2245
+DataUnitsWritten : 70
+
+
+
+
+Проверка выборочная: исправность всей памяти и отсутствие будущих сбоев не гарантирует.
+Результат collected означает сбор данных, а не заключение об исправности.
+Ошибки сбора:
+

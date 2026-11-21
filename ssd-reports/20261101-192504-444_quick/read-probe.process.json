@@ -1,0 +1,22 @@
+﻿{
+    "Exe":  "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "Arguments":  [
+                      "-NoProfile",
+                      "-NonInteractive",
+                      "-ExecutionPolicy",
+                      "Bypass",
+                      "-File",
+                      "D:\\laptop-checkup\\ssd-read-probe.ps1",
+                      "-DiskNumber",
+                      "0",
+                      "-ExpectedModel",
+                      "GIGABYTE AG450E1024-SI",
+                      "-ExpectedSize",
+                      "1024203640320",
+                      "-OutputPath",
+                      "D:\\laptop-checkup\\ssd-reports\\20261101-192504-444_quick\\read-probe.json"
+                  ],
+    "ExitCode":  0,
+    "TimedOut":  false,
+    "Seconds":  5.3447933999999995
+}

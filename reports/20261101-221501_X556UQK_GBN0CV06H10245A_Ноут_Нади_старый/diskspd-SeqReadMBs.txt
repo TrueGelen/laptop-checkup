@@ -1,0 +1,88 @@
+﻿
+Command Line: F:\laptop-checkup\tools\diskspd\amd64\diskspd.exe -c1G -b1M -d10 -o8 -t1 -W2 -Sh -w0 C:\Users\Nadia\AppData\Local\Temp\laptop-checkup-diskspd.dat
+
+Input parameters:
+
+  timespan:   1
+  -------------
+    duration: 10s
+    warm up time: 2s
+    cool down time: 0s
+    random seed: 0
+    affinity assignment: cpu order, fill groups, P-cores first
+    buffer separation: thread optimized (16MiB)
+    path: 'C:\Users\Nadia\AppData\Local\Temp\laptop-checkup-diskspd.dat'
+      think time: 0ms
+      burst size: 0
+      software cache disabled
+      hardware write cache disabled, writethrough on
+      performing read test
+      block size: 1MiB
+      using sequential I/O (stride: 1MiB)
+      number of outstanding I/O operations per thread: 8
+      threads per file: 1
+      using I/O Completion Ports
+      IO priority: normal
+
+System information:
+
+  computer name:        DESKTOP-N55EF2B
+  processor name:       Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz
+  start time:           2026/11/01 19:15:48 UTC
+  active power scheme:  ╨б╨▒╨░╨╗╨░╨╜╤Б╨╕╤А╨╛╨▓╨░╨╜╨╜╨░╤П (381b4222-f694-41f0-9685-ff5bb260df2e)
+  page size:            4KiB
+
+  cpu count:            4
+  core count:           2
+  group count:          1
+  node count:           1
+  socket count:         1
+  heterogeneous cores:  n
+
+  cache information:
+
+    Cache |   Size   | Line  | Assoc  | CPU
+    -------------------------------------------------------
+    L1d   |    32KiB |   64B |  8-way | 0-3 (per core)
+    L1i   |    32KiB |   64B |  8-way | 0-3 (per core)
+    L2    |   256KiB |   64B |  4-way | 0-3 (per core)
+    L3    |     3MiB |   64B | 12-way | 0-3
+
+Results for timespan 1:
+*******************************************************************************
+
+actual test time:	10.01s
+thread count:		1
+
+effective affinity (cpu): 0
+
+Core | CPU |  Usage |  User  | Kernel |  Idle
+-----------------------------------------------
+    0|    0|  12.95%|   1.56%|  11.39%|  87.05%
+    0|    1|   7.03%|   5.47%|   1.56%|  92.97%
+    1|    2|   6.55%|   4.21%|   2.34%|  93.45%
+    1|    3|   4.52%|   3.12%|   1.40%|  95.48%
+-----------------------------------------------
+       avg.|   7.76%|   3.59%|   4.17%|  92.24%
+
+Total IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |      5334106112 |         5087 |     508.03 |     508.03 | C:\Users\Nadia\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:        5334106112 |         5087 |     508.03 |     508.03
+
+Read IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |      5334106112 |         5087 |     508.03 |     508.03 | C:\Users\Nadia\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:        5334106112 |         5087 |     508.03 |     508.03
+
+Write IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |               0 |            0 |       0.00 |       0.00 | C:\Users\Nadia\AppData\Local\Temp\laptop-checkup-diskspd.dat (1GiB)
+------------------------------------------------------------------------------
+total:                 0 |            0 |       0.00 |       0.00
+

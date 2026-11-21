@@ -1,0 +1,9 @@
+﻿{
+    "LookbackDays":  14,
+    "QueryLimit":  1500,
+    "Returned":  14,
+    "QueryMessages":  [
+
+                      ],
+    "Note":  "System-wide events, not all necessarily related to this SSD. Empty query is not proof of health."
+}

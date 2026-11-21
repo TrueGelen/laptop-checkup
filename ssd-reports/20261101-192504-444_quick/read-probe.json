@@ -1,0 +1,333 @@
+﻿{
+    "Status":  "completed",
+    "Detail":  "64 sampled 1 MiB reads and 1 GiB sequential read completed. This is not a full-surface or data-integrity verification.",
+    "DiskNumber":  0,
+    "ReadOnly":  true,
+    "Samples":  [
+                    {
+                        "Offset":  0,
+                        "Bytes":  1048576,
+                        "Milliseconds":  7.8384
+                    },
+                    {
+                        "Offset":  16257163264,
+                        "Bytes":  1048576,
+                        "Milliseconds":  1.4451
+                    },
+                    {
+                        "Offset":  32514330624,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.6745
+                    },
+                    {
+                        "Offset":  48771497984,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3241
+                    },
+                    {
+                        "Offset":  65028665344,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3057
+                    },
+                    {
+                        "Offset":  81285832704,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3786
+                    },
+                    {
+                        "Offset":  97543000064,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3286
+                    },
+                    {
+                        "Offset":  113800167424,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.36560000000000004
+                    },
+                    {
+                        "Offset":  130057334784,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3826
+                    },
+                    {
+                        "Offset":  146314502144,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.92380000000000007
+                    },
+                    {
+                        "Offset":  162571669504,
+                        "Bytes":  1048576,
+                        "Milliseconds":  1.1715
+                    },
+                    {
+                        "Offset":  178828836864,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.275
+                    },
+                    {
+                        "Offset":  195086004224,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.37410000000000004
+                    },
+                    {
+                        "Offset":  211343171584,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.7248
+                    },
+                    {
+                        "Offset":  227600338944,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3377
+                    },
+                    {
+                        "Offset":  243857506304,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3633
+                    },
+                    {
+                        "Offset":  260114673664,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3065
+                    },
+                    {
+                        "Offset":  276371841024,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3244
+                    },
+                    {
+                        "Offset":  292629008384,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2988
+                    },
+                    {
+                        "Offset":  308886175744,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5626
+                    },
+                    {
+                        "Offset":  325143343104,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.6559
+                    },
+                    {
+                        "Offset":  341400510464,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2918
+                    },
+                    {
+                        "Offset":  357657677824,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3135
+                    },
+                    {
+                        "Offset":  373914845184,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2964
+                    },
+                    {
+                        "Offset":  390172012544,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5877
+                    },
+                    {
+                        "Offset":  406429179904,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3034
+                    },
+                    {
+                        "Offset":  422686347264,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.29250000000000004
+                    },
+                    {
+                        "Offset":  438943514624,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2958
+                    },
+                    {
+                        "Offset":  455200681984,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3803
+                    },
+                    {
+                        "Offset":  471457849344,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3316
+                    },
+                    {
+                        "Offset":  487715016704,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.49050000000000005
+                    },
+                    {
+                        "Offset":  503972184064,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3013
+                    },
+                    {
+                        "Offset":  520229351424,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5596
+                    },
+                    {
+                        "Offset":  536486518784,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5613
+                    },
+                    {
+                        "Offset":  552743686144,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.35500000000000004
+                    },
+                    {
+                        "Offset":  569000853504,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.29560000000000003
+                    },
+                    {
+                        "Offset":  585258020864,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.29660000000000003
+                    },
+                    {
+                        "Offset":  601515188224,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2943
+                    },
+                    {
+                        "Offset":  617772355584,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2997
+                    },
+                    {
+                        "Offset":  634029522944,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.681
+                    },
+                    {
+                        "Offset":  650286690304,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2983
+                    },
+                    {
+                        "Offset":  666543857664,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2983
+                    },
+                    {
+                        "Offset":  682801025024,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3476
+                    },
+                    {
+                        "Offset":  699058192384,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2987
+                    },
+                    {
+                        "Offset":  715315359744,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.32580000000000003
+                    },
+                    {
+                        "Offset":  731572527104,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.7246
+                    },
+                    {
+                        "Offset":  747829694464,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2984
+                    },
+                    {
+                        "Offset":  764086861824,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.29200000000000004
+                    },
+                    {
+                        "Offset":  780344029184,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2944
+                    },
+                    {
+                        "Offset":  796601196544,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5722
+                    },
+                    {
+                        "Offset":  812858363904,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3256
+                    },
+                    {
+                        "Offset":  829115531264,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2973
+                    },
+                    {
+                        "Offset":  845372698624,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2985
+                    },
+                    {
+                        "Offset":  861629865984,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2928
+                    },
+                    {
+                        "Offset":  877887033344,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.332
+                    },
+                    {
+                        "Offset":  894144200704,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.29650000000000004
+                    },
+                    {
+                        "Offset":  910401368064,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.56890000000000007
+                    },
+                    {
+                        "Offset":  926658535424,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.3245
+                    },
+                    {
+                        "Offset":  942915702784,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.2973
+                    },
+                    {
+                        "Offset":  959172870144,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.7477
+                    },
+                    {
+                        "Offset":  975430037504,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.32480000000000003
+                    },
+                    {
+                        "Offset":  991687204864,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5805
+                    },
+                    {
+                        "Offset":  1007944372224,
+                        "Bytes":  1048576,
+                        "Milliseconds":  0.5803
+                    },
+                    {
+                        "Offset":  1024201539584,
+                        "Bytes":  1048576,
+                        "Milliseconds":  4.2738000000000005
+                    }
+                ],
+    "SequentialBytes":  1073741824,
+    "Started":  "2026-11-01T19:26:35.1443524+03:00",
+    "SequentialSeconds":  0.91551909999999992,
+    "SequentialMiBs":  1118.4911379784432,
+    "Finished":  "2026-11-01T19:26:39.6802860+03:00"
+}

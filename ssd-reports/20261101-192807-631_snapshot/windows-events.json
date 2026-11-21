@@ -1,0 +1,100 @@
+﻿[
+    {
+        "TimeCreated":  "\/Date(1793549454868)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793549452812)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793545635829)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793545633900)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793545374827)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793545370995)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793544288898)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793544286938)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793544167871)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793544165879)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793543992246)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793543990559)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793543868772)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том \\\\?\\Volume{bbf73fd2-3bf4-42d0-8e82-ab836aea326a} (\\Device\\HarddiskVolume4) работоспособен.  Не требуется никаких действий."
+    },
+    {
+        "TimeCreated":  "\/Date(1793543862742)\/",
+        "Id":  98,
+        "LevelDisplayName":  "Сведения",
+        "ProviderName":  "Microsoft-Windows-Ntfs",
+        "Message":  "Том C: (\\Device\\HarddiskVolume3) работоспособен.  Не требуется никаких действий."
+    }
+]

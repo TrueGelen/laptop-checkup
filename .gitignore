@@ -1,6 +1,3 @@
-# Generated reports may contain device serial numbers and other personal data.
-/ssd-reports/
-
 # Local backups and editor files.
 *.bak
 *.tmp

@@ -1,0 +1,129 @@
+﻿<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Проверка ноутбука</title>
+<style>
+:root{--bg:#fff;--fg:#1f2328;--mut:#57606a;--line:#d0d7de;--card:#f6f8fa}
+@media (prefers-color-scheme:dark){:root{--bg:#0d1117;--fg:#e6edf3;--mut:#8d96a0;--line:#30363d;--card:#161b22}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,Segoe UI,sans-serif;margin:0;padding:16px;max-width:1000px}
+h1{font-size:22px;margin:0 0 4px} h2{font-size:17px;margin:24px 0 8px} .mut{color:var(--mut)}
+table{border-collapse:collapse;width:100%;margin:6px 0} td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{color:var(--mut);font-weight:600} .tag{color:#fff;border-radius:10px;padding:1px 8px;font-size:12px;white-space:nowrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px} .wrap{overflow-x:auto}
+pre{white-space:pre-wrap;font-size:13px}
+</style></head><body>
+<h1>Micro-Star International Co., Ltd. Vector GP76 12UGSO</h1>
+<div class="mut">S/N 9S717K414858ZM9000425 · BIOS E17K4IMS.504 (2022-06-06) · 2026-10-24 15:55 · режим Quick · smoke</div>
+<h2>Итог</h2><div class="wrap"><table><tr><th>Оценка</th><th>Что</th><th>Измерено</th><th>Референс и основание оценки</th></tr><tr><td><span class='tag' style='background:#cf222e'>плохо</span></td><td>Батарея</td><td>Ёмкость 72.2% от заводской (45646 из 63232 мВт&#183;ч), циклов: 0</td><td>Пороги набора по остаточной ёмкости: норма ≥85%, внимание 75–&lt;85%, плохо &lt;75% от DesignCapacity.</td></tr>
+<tr><td><span class='tag' style='background:#1a7f37'>норма</span></td><td>Память</td><td>Планок: 2, 31,7 ГБ, DDR5</td><td>Число модулей и тип считываются из SMBIOS; число активных каналов и заводское происхождение модулей этим не подтверждаются.</td></tr>
+<tr><td><span class='tag' style='background:#1a7f37'>норма</span></td><td>Устройства</td><td>Ошибок в диспетчере устройств нет</td><td>Сравнение с ConfigManagerErrorCode=0; отключённые устройства (код 22) исключены.</td></tr>
+<tr><td><span class='tag' style='background:#cf222e'>плохо</span></td><td>Процессор: Cinebench R23 Multi</td><td>13656 баллов в среднем за тест (проходов 2: первый 14430, последний 12883); первый проход — 79% от ориентира 18203 (обзор Notebookcheck, один прогон)</td><td>Первый проход / референс: норма ≥90%, внимание 80–&lt;90%, плохо &lt;80%. При приблизительном референсе оценка справочная.</td></tr>
+<tr><td><span class='tag' style='background:#1a7f37'>норма</span></td><td>Процессор: частота под нагрузкой</td><td>в начале 2841 МГц → во второй половине 2381 МГц (просадка 16%)</td><td>Порог набора по снижению частоты относительно начала: норма &lt;20%, внимание 20–&lt;35%, плохо ≥35%. Просадка сама по себе не доказывает перегрев.</td></tr>
+<tr><td><span class='tag' style='background:#57606a'>инфо</span></td><td>Процессор: температура (ACPI-зона)</td><td>средняя 96.5 &#176;C, максимум 96.9 &#176;C</td><td>ACPI-зона не является датчиком CPU Package; официальный Tjmax к ней не применяется. Температура приводится справочно.</td></tr>
+<tr><td><span class='tag' style='background:#cf222e'>плохо</span></td><td>Видеокарта: температура</td><td>средняя 83.4 &#176;C, максимум 88 &#176;C; отсчётов под нагрузкой 58</td><td>Пороги набора по максимуму: норма &lt;84 &#176;C, внимание 84–&lt;88 &#176;C, плохо ≥88 &#176;C. Это диагностическое правило, не официальный предел GPU. Референс: в обзоре GP76: средняя GPU 68 &#176;C в Prime95 + FurMark, 78 &#176;C в The Witcher 3; это средние, не предел температуры <a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Источник</a></td></tr>
+<tr><td><span class='tag' style='background:#cf222e'>плохо</span></td><td>Видеокарта: тепловой троттлинг</td><td>33% загруженных отсчётов с доступными флагами (19 из 58); покрытие 58 из 58</td><td>Доля загруженных отсчётов GPU с thermal-флагами nvidia-smi (0x20/0x40). Пороги набора: норма &lt;2%, внимание 2–&lt;15%, плохо ≥15%. Ожидается отсутствие устойчивого теплового ограничения; краткие пики возможны. <a href='https://docs.nvidia.com/deploy/nvml-api/latest/api/group__nvmlClocksEventReasons.html'>Источник</a></td></tr>
+<tr><td><span class='tag' style='background:#1a7f37'>норма</span></td><td>Видеокарта: мощность под нагрузкой</td><td>средняя 118 Вт, частота 1121 МГц (лимит 125 Вт, максимум с Dynamic Boost 150 Вт); 95% от лимита во время теста (125 Вт); ориентир: 150 Вт — Extreme Performance (в Auto/Silent — 125 Вт), Notebookcheck</td><td>Среднее потребление / фактический лимит: норма ≥85%, внимание 70–&lt;85%, плохо &lt;70% (эвристика набора). Для A16 — справочно; достижение лимита не подтверждает быстродействие.</td></tr>
+<tr><td><span class='tag' style='background:#57606a'>инфо</span></td><td>Зарядка</td><td>Разряд более 3 Вт от сети: 0% отсчётов; признак устойчивого разряда не выявлен</td><td>Внимание: разряд &gt;3 Вт при подключённом питании в ≥10% отсчётов совместной нагрузки. Отсутствие такого разряда не подтверждает номинал адаптера.</td></tr>
+<tr><td><span class='tag' style='background:#57606a'>инфо</span></td><td>Виртуализация</td><td>включена</td><td>Фактическое состояние, сообщённое Windows; числовой референс неприменим.</td></tr></table></div>
+<h2>Сверка комплектующих</h2>
+<p class="mut">Сравнение с заявленной конфигурацией и опубликованными возможностями платформы. Без полного SKU и исходной ведомости нельзя доказать заводское происхождение RAM, SSD и панели. «Не сверено» означает отсутствие исходных данных, а не подтверждение комплектации.</p>
+<div class="wrap"><table><tr><th>Компонент</th><th>Ожидается</th><th>Установлено / измерено</th><th>Результат</th><th>Основание и ограничения</th></tr><tr><td>CPU</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>12th Gen Intel(R) Core(TM) i7-12700H, 14 ядер / 20 потоков</td><td>не сверено</td><td>Не задано: нужен полный SKU / исходная комплектация</td></tr>
+<tr><td>Мощность CPU</td><td>Лимит конкретного ноутбука не подтверждён</td><td>Не измеряется этим набором</td><td>нет данных</td><td>Нужны показания мощности CPU Package и лимитов под нагрузкой; текущий набор их не собирает.</td></tr>
+<tr><td>GPU</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>NVIDIA GeForce RTX 3070 Ti Laptop GPU; Intel(R) Iris(R) Xe Graphics</td><td>не сверено</td><td>Модель из задания; отсутствие дискретной GPU также может быть связано с драйвером или режимом iGPU.</td></tr>
+<tr><td>Видеопамять</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>8192 МиБ</td><td>не сверено</td><td>Объём считывает nvidia-smi; тип GDDR текущий набор не определяет. Допуск 256 МиБ на резерв драйвера.</td></tr>
+<tr><td>Мощность GPU</td><td>Extreme Performance (в Auto/Silent — 125 Вт), Notebookcheck</td><td>Лимит 125 Вт; максимум 150 Вт</td><td>сверить режим</td><td>Лимит сообщает драйвер; выберите одинаковый режим GiMATE/MSI Center. Ватты не заменяют тест производительности.</td></tr>
+<tr><td>RAM: объём</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>32 ГБ установлено; модулей 2, слотов 2</td><td>не сверено</td><td>Используется сумма ёмкостей планок, а не доступная Windows память. Без исходного объёма уменьшение ёмкости не определить.</td></tr>
+<tr><td>RAM: Controller0-ChannelA-DIMM0</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>Kingston KF548S38-16; 16 ГБ DDR5; паспорт 4800, работает 4800 МТ/с; S/N </td><td>не сверено</td><td>Марка и артикул из SMBIOS. Происхождение планки и тайминги не подтверждены; иной производитель сам по себе не означает ухудшение.</td></tr>
+<tr><td>RAM: Controller1-ChannelA-DIMM0</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>Kingston KF548S38-16; 16 ГБ DDR5; паспорт 4800, работает 4800 МТ/с; S/N </td><td>не сверено</td><td>Марка и артикул из SMBIOS. Происхождение планки и тайминги не подтверждены; иной производитель сам по себе не означает ухудшение.</td></tr>
+<tr><td>SSD</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>Нет данных о внутренних накопителях</td><td>нет данных</td><td>Данные диска отсутствуют в этом прогоне; исправность и комплектация не подтверждены.</td></tr>
+<tr><td>Экран</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>AUO 978F  ; EDID максимум 144 Гц; сейчас 1920x1080 @ 144 Гц</td><td>не сверено</td><td>Текущий режим Windows не равен максимальному разрешению панели. Модель панели, IPS и цветовой охват требуют сверки; возможен внешний монитор.</td></tr>
+<tr><td>Батарея</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>MSI BIF0_9; заводская 63232, полная 45646 мВт&#183;ч</td><td>сверить ёмкость</td><td>DesignCapacity сообщает контроллер установленной батареи; износ не доказывает оригинальность или отсутствие замены.</td></tr>
+<tr><td>Блок питания</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>Маркировка адаптера программно не читается</td><td>проверить руками</td><td>Сверьте выходное напряжение и ток на наклейке; номинальная мощность = В &#215; А.</td></tr>
+<tr><td>Сеть</td><td>Не задано: нужен полный SKU / исходная комплектация</td><td>Intel(R) Wi-Fi 6E AX211 160MHz — Up; Realtek Gaming 2.5GbE Family Controller — Disconnected</td><td>не сверено</td><td>Показаны названия адаптеров Windows; для проверки замены нужна исходная модель.</td></tr></table></div>
+<h2>Конфигурация</h2><div class="card">
+Процессор: 12th Gen Intel(R) Core(TM) i7-12700H (14 ядер / 20 потоков)<br>
+Видеокарта: NVIDIA GeForce RTX 3070 Ti Laptop GPU · лимит 125 Вт (макс. 150 Вт) · VBIOS 94.04.7e.00.03 · драйвер 591.86 · режим: гибридный (MSHybrid/Optimus)<br>
+Экран: AUO 978F   · максимум 144 Гц · сейчас 1920x1080@144<br>
+Память: 31.7 ГБ, слотов 2<br>
+Сеть: Intel(R) Wi-Fi 6E AX211 160MHz — Up; Realtek Gaming 2.5GbE Family Controller — Disconnected<br>
+Bluetooth: Универсальная служба атрибутов Bluetooth с низким энергопотреблением; Soundcore Mega; Универсальный профиль доступа; Intel(R) Wireless Bluetooth(R); X9 BT5.0; HUAWEI FreeBuds SE 2; Служба обнаружения служб; Служба защиты доступа к личной сети; Служба сведений об устройствах; iPhone (Влад); SVEN AP-B630MV; Перечислитель Bluetooth LE (Майкрософт); Служба доступа к телефонной книге (PSE)<br>
+Windows: Майкрософт Windows 10 Pro 10.0.19045, установлена 2022-12-23 · GUID схемы питания: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (Высокая производительность)<br>
+Secure Boot:  · TPM: есть: False, готов: False
+</div>
+<div class="wrap"><table><tr><th>Слот</th><th>Объём</th><th>Тип</th><th>Номинал / работает</th><th>Модуль</th></tr><tr><td>Controller0-ChannelA-DIMM0 / BANK 0</td><td>16 ГБ</td><td>DDR5</td><td>4800 / 4800 МТ/с</td><td>Kingston KF548S38-16</td></tr>
+<tr><td>Controller1-ChannelA-DIMM0 / BANK 0</td><td>16 ГБ</td><td>DDR5</td><td>4800 / 4800 МТ/с</td><td>Kingston KF548S38-16</td></tr></table></div>
+<h2>Этапы</h2>
+<div class="wrap"><table><tr><th>Этап</th><th>Длит.</th><th>CPU МГц сред/мин</th><th>ACPI °C сред/макс</th><th>GPU °C сред/макс</th><th>GPU Вт сред/макс</th><th>GPU МГц</th></tr><tr><td>idle</td><td>20 с</td><td>3259 / 2442</td><td>59.9 / 65.9</td><td>— / —</td><td>6 / 6</td><td>1485</td></tr>
+<tr><td>cpu</td><td>125 с</td><td>2585 / 2297</td><td>94.9 / 96.9</td><td>— / —</td><td>6 / 6</td><td>1485</td></tr>
+<tr><td>cool1</td><td>15 с</td><td>3455 / 3143</td><td>77.6 / 80.9</td><td>— / —</td><td>6 / 6</td><td>1485</td></tr>
+<tr><td>gpu</td><td>67 с</td><td>3453 / 2781</td><td>85.6 / 94.9</td><td>83 / 88</td><td>112 / 125</td><td>1187</td></tr>
+<tr><td>cool2</td><td>15 с</td><td>3249 / 2611</td><td>84.5 / 87.9</td><td>— / —</td><td>6 / 6</td><td>1485</td></tr>
+<tr><td>combo</td><td>93 с</td><td>1839 / 1523</td><td>96.4 / 96.9</td><td>83 / 89</td><td>56 / 125</td><td>588</td></tr></table></div>
+<p class="mut">ACPI-зона — датчик прошивки ноутбука; обычно близок к температуре процессора, но не равен ей. Для сравнения «до/после» важно, что датчик один и тот же.</p>
+<h2>Ориентиры из обзоров и спецификаций — MSI Vector GP76 12UGS/12UGSO (i7-12700H, RTX 3070 Ti до 150 Вт)</h2><div class='wrap'><table><tr><th>Что</th><th>Значение</th><th>Источник</th><th>Примечание</th></tr><tr><td>Cinebench R23 Multi / Single</td><td>18 203 / 1 778</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'>лучший R23 Multi для i7-12700H по LaptopMedia — 18 625</td></tr>
+<tr><td>Процессор под длительной нагрузкой</td><td>со ~100 Вт быстро сбрасывается до 45 Вт; в Extreme — 70 Вт; в цикле R15 −20%</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'></td></tr>
+<tr><td>Мощность видеокарты</td><td>150 Вт в Extreme (вкл. 15 Вт Dynamic Boost), 125 Вт в Auto и Silent</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'></td></tr>
+<tr><td>Стресс Prime95 + FurMark</td><td>CPU 2,2 ГГц / 67 &#176;C, GPU 1780 МГц / 68 &#176;C (средние)</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'>другая нагрузка, чем у нас; температуры — ориентир здорового охлаждения</td></tr>
+<tr><td>Игра (The Witcher 3)</td><td>CPU 82 &#176;C, GPU 78 &#176;C</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'></td></tr>
+<tr><td>Особенность Extreme Performance</td><td>у обозревателей вентиляторы крутились медленно даже под полной нагрузкой → перегрев и сильный троттлинг</td><td><a href='https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html'>Notebookcheck</a></td><td class='mut'>если и у вас в Extreme вентиляторы не раскручиваются — дело в управлении вентиляторами, а не в пасте</td></tr></table></div><p class='mut'>Обзоры обычно дают один прогон Cinebench «на холодную», а наш тест идёт 10 минут: с обзором сравнивайте первый проход. Средняя за 10 минут ниже — это нормально, если просадка небольшая.</p>
+<h2>Сводка (для отправки)</h2><div class="card"><pre>laptop-checkup 2026-10-24 15:55 режим Quick, метка: smoke
+Micro-Star International Co., Ltd. Vector GP76 12UGSO | S/N 9S717K414858ZM9000425 | BIOS E17K4IMS.504 2022-06-06
+CPU 12th Gen Intel(R) Core(TM) i7-12700H | RAM 31.7 ГБ: Controller0-ChannelA-DIMM0 16ГБ DDR5-4800, Controller1-ChannelA-DIMM0 16ГБ DDR5-4800
+GPU NVIDIA GeForce RTX 3070 Ti Laptop GPU | лимит 125 Вт, макс 150 Вт | режим: гибридный (MSHybrid/Optimus) | питание: от сети
+Экран: AUO 978F   | сейчас 1920x1080@144 | макс. 144 Гц
+
+[BAD] Батарея: Ёмкость 72.2% от заводской (45646 из 63232 мВт&#183;ч), циклов: 0
+  Основание: Пороги набора по остаточной ёмкости: норма ≥85%, внимание 75–&lt;85%, плохо &lt;75% от DesignCapacity.
+[OK] Память: Планок: 2, 31,7 ГБ, DDR5
+  Основание: Число модулей и тип считываются из SMBIOS; число активных каналов и заводское происхождение модулей этим не подтверждаются.
+[OK] Устройства: Ошибок в диспетчере устройств нет
+  Основание: Сравнение с ConfigManagerErrorCode=0; отключённые устройства (код 22) исключены.
+[BAD] Процессор: Cinebench R23 Multi: 13656 баллов в среднем за тест (проходов 2: первый 14430, последний 12883); первый проход — 79% от ориентира 18203 (обзор Notebookcheck, один прогон)
+  Основание: Первый проход / референс: норма ≥90%, внимание 80–&lt;90%, плохо &lt;80%. При приблизительном референсе оценка справочная.
+[OK] Процессор: частота под нагрузкой: в начале 2841 МГц → во второй половине 2381 МГц (просадка 16%)
+  Основание: Порог набора по снижению частоты относительно начала: норма &lt;20%, внимание 20–&lt;35%, плохо ≥35%. Просадка сама по себе не доказывает перегрев.
+[INFO] Процессор: температура (ACPI-зона): средняя 96.5 &#176;C, максимум 96.9 &#176;C
+  Основание: ACPI-зона не является датчиком CPU Package; официальный Tjmax к ней не применяется. Температура приводится справочно.
+[BAD] Видеокарта: температура: средняя 83.4 &#176;C, максимум 88 &#176;C; отсчётов под нагрузкой 58
+  Основание: Пороги набора по максимуму: норма &lt;84 &#176;C, внимание 84–&lt;88 &#176;C, плохо ≥88 &#176;C. Это диагностическое правило, не официальный предел GPU. Референс: в обзоре GP76: средняя GPU 68 &#176;C в Prime95 + FurMark, 78 &#176;C в The Witcher 3; это средние, не предел температуры https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html
+[BAD] Видеокарта: тепловой троттлинг: 33% загруженных отсчётов с доступными флагами (19 из 58); покрытие 58 из 58
+  Основание: Доля загруженных отсчётов GPU с thermal-флагами nvidia-smi (0x20/0x40). Пороги набора: норма &lt;2%, внимание 2–&lt;15%, плохо ≥15%. Ожидается отсутствие устойчивого теплового ограничения; краткие пики возможны. https://docs.nvidia.com/deploy/nvml-api/latest/api/group__nvmlClocksEventReasons.html
+[OK] Видеокарта: мощность под нагрузкой: средняя 118 Вт, частота 1121 МГц (лимит 125 Вт, максимум с Dynamic Boost 150 Вт); 95% от лимита во время теста (125 Вт); ориентир: 150 Вт — Extreme Performance (в Auto/Silent — 125 Вт), Notebookcheck
+  Основание: Среднее потребление / фактический лимит: норма ≥85%, внимание 70–&lt;85%, плохо &lt;70% (эвристика набора). Для A16 — справочно; достижение лимита не подтверждает быстродействие.
+[INFO] Зарядка: Разряд более 3 Вт от сети: 0% отсчётов; признак устойчивого разряда не выявлен
+  Основание: Внимание: разряд &gt;3 Вт при подключённом питании в ≥10% отсчётов совместной нагрузки. Отсутствие такого разряда не подтверждает номинал адаптера.
+[INFO] Виртуализация: включена
+  Основание: Фактическое состояние, сообщённое Windows; числовой референс неприменим.
+
+Сверка комплектующих:
+[не сверено] CPU: 12th Gen Intel(R) Core(TM) i7-12700H, 14 ядер / 20 потоков | ожидается: Не задано: нужен полный SKU / исходная комплектация | Не задано: нужен полный SKU / исходная комплектация
+[нет данных] Мощность CPU: Не измеряется этим набором | ожидается: Лимит конкретного ноутбука не подтверждён | Нужны показания мощности CPU Package и лимитов под нагрузкой; текущий набор их не собирает.
+[не сверено] GPU: NVIDIA GeForce RTX 3070 Ti Laptop GPU; Intel(R) Iris(R) Xe Graphics | ожидается: Не задано: нужен полный SKU / исходная комплектация | Модель из задания; отсутствие дискретной GPU также может быть связано с драйвером или режимом iGPU.
+[не сверено] Видеопамять: 8192 МиБ | ожидается: Не задано: нужен полный SKU / исходная комплектация | Объём считывает nvidia-smi; тип GDDR текущий набор не определяет. Допуск 256 МиБ на резерв драйвера.
+[сверить режим] Мощность GPU: Лимит 125 Вт; максимум 150 Вт | ожидается: Extreme Performance (в Auto/Silent — 125 Вт), Notebookcheck | Лимит сообщает драйвер; выберите одинаковый режим GiMATE/MSI Center. Ватты не заменяют тест производительности.
+[не сверено] RAM: объём: 32 ГБ установлено; модулей 2, слотов 2 | ожидается: Не задано: нужен полный SKU / исходная комплектация | Используется сумма ёмкостей планок, а не доступная Windows память. Без исходного объёма уменьшение ёмкости не определить.
+[не сверено] RAM: Controller0-ChannelA-DIMM0: Kingston KF548S38-16; 16 ГБ DDR5; паспорт 4800, работает 4800 МТ/с; S/N  | ожидается: Не задано: нужен полный SKU / исходная комплектация | Марка и артикул из SMBIOS. Происхождение планки и тайминги не подтверждены; иной производитель сам по себе не означает ухудшение.
+[не сверено] RAM: Controller1-ChannelA-DIMM0: Kingston KF548S38-16; 16 ГБ DDR5; паспорт 4800, работает 4800 МТ/с; S/N  | ожидается: Не задано: нужен полный SKU / исходная комплектация | Марка и артикул из SMBIOS. Происхождение планки и тайминги не подтверждены; иной производитель сам по себе не означает ухудшение.
+[нет данных] SSD: Нет данных о внутренних накопителях | ожидается: Не задано: нужен полный SKU / исходная комплектация | Данные диска отсутствуют в этом прогоне; исправность и комплектация не подтверждены.
+[не сверено] Экран: AUO 978F  ; EDID максимум 144 Гц; сейчас 1920x1080 @ 144 Гц | ожидается: Не задано: нужен полный SKU / исходная комплектация | Текущий режим Windows не равен максимальному разрешению панели. Модель панели, IPS и цветовой охват требуют сверки; возможен внешний монитор.
+[сверить ёмкость] Батарея: MSI BIF0_9; заводская 63232, полная 45646 мВт&#183;ч | ожидается: Не задано: нужен полный SKU / исходная комплектация | DesignCapacity сообщает контроллер установленной батареи; износ не доказывает оригинальность или отсутствие замены.
+[проверить руками] Блок питания: Маркировка адаптера программно не читается | ожидается: Не задано: нужен полный SKU / исходная комплектация | Сверьте выходное напряжение и ток на наклейке; номинальная мощность = В &#215; А.
+[не сверено] Сеть: Intel(R) Wi-Fi 6E AX211 160MHz — Up; Realtek Gaming 2.5GbE Family Controller — Disconnected | ожидается: Не задано: нужен полный SKU / исходная комплектация | Показаны названия адаптеров Windows; для проверки замены нужна исходная модель.
+
+Простой: CPU 3259 МГц, ACPI 59.9 &#176;C | GPU — &#176;C, 6 Вт
+Совместная нагрузка: CPU 1983 МГц, ACPI макс 96.9 &#176;C | GPU макс 89 &#176;C, 94 Вт
+Cinebench R23 Multi при нагруженной видеокарте: 9363
+SSD: чтение 3408 МБ/с, запись 3313 МБ/с, 4K случайное чтение 401860 IOPS
+Батарея: MSI BIF0_9, 45646/63232 мВт&#183;ч, циклов 0
+Сеть: Intel(R) Wi-Fi 6E AX211 160MHz — Up; Realtek Gaming 2.5GbE Family Controller — Disconnected
+Виртуализация: прошивка False, гипервизор True | Secure Boot:  | TPM: есть: False, готов: False
+Windows: Майкрософт Windows 10 Pro 10.0.19045, установлена 2022-12-23 | GUID схемы питания: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (Высокая производительность)
+
+Ориентиры из обзоров и спецификаций (MSI Vector GP76 12UGS/12UGSO (i7-12700H, RTX 3070 Ti до 150 Вт)):
+  Cinebench R23 Multi / Single: 18 203 / 1 778 [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — лучший R23 Multi для i7-12700H по LaptopMedia — 18 625
+  Процессор под длительной нагрузкой: со ~100 Вт быстро сбрасывается до 45 Вт; в Extreme — 70 Вт; в цикле R15 −20% [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — 
+  Мощность видеокарты: 150 Вт в Extreme (вкл. 15 Вт Dynamic Boost), 125 Вт в Auto и Silent [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — 
+  Стресс Prime95 + FurMark: CPU 2,2 ГГц / 67 &#176;C, GPU 1780 МГц / 68 &#176;C (средние) [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — другая нагрузка, чем у нас; температуры — ориентир здорового охлаждения
+  Игра (The Witcher 3): CPU 82 &#176;C, GPU 78 &#176;C [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — 
+  Особенность Extreme Performance: у обозревателей вентиляторы крутились медленно даже под полной нагрузкой → перегрев и сильный троттлинг [Notebookcheck] https://www.notebookcheck.net/MSI-Vector-GP76-12UGS-review-Gaming-laptop-on-speed.619683.0.html — если и у вас в Extreme вентиляторы не раскручиваются — дело в управлении вентиляторами, а не в пасте</pre></div>
+<h2>Проверить руками</h2><div class="card">Петли и корпус · битые пиксели и засветы · клавиатура и тачпад · порты · звук, микрофон, камера · Wi-Fi/Bluetooth · пароль BIOS · отвязка учётной записи Microsoft</div>
+<h2>Файлы</h2><ul><li><a href='battery.xml'>battery.xml</a></li><li><a href='run.json'>run.json</a></li><li><a href='diskspd-SeqWriteMBs.txt'>diskspd-SeqWriteMBs.txt</a></li><li><a href='info.json'>info.json</a></li><li><a href='run.log'>run.log</a></li><li><a href='cinebench-combo.txt'>cinebench-combo.txt</a></li><li><a href='furmark-combo.txt'>furmark-combo.txt</a></li><li><a href='cinebench-cpu.txt'>cinebench-cpu.txt</a></li><li><a href='furmark-combo.txt.err'>furmark-combo.txt.err</a></li><li><a href='battery.html'>battery.html</a></li><li><a href='furmark-gpu.txt'>furmark-gpu.txt</a></li><li><a href='phases.csv'>phases.csv</a></li><li><a href='diskspd-Rand4kIops.txt'>diskspd-Rand4kIops.txt</a></li><li><a href='summary.txt'>summary.txt</a></li><li><a href='sensors.csv'>sensors.csv</a></li><li><a href='cinebench-cpu.txt.err'>cinebench-cpu.txt.err</a></li><li><a href='hardware-inventory.json'>hardware-inventory.json</a></li><li><a href='state.json'>state.json</a></li><li><a href='diskspd-SeqReadMBs.txt'>diskspd-SeqReadMBs.txt</a></li><li><a href='report.html'>report.html</a></li><li><a href='cinebench-combo.txt.err'>cinebench-combo.txt.err</a></li><li><a href='gpu.csv'>gpu.csv</a></li><li><a href='furmark-gpu.txt.err'>furmark-gpu.txt.err</a></li></ul>
+</body></html>

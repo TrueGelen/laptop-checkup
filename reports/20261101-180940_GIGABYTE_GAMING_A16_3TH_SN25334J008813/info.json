@@ -1,0 +1,76 @@
+﻿{
+    "Manufacturer":  "GIGABYTE",
+    "Model":  "GIGABYTE GAMING A16 3TH",
+    "Sku":  "GA63TH",
+    "Serial":  "SN25334J008813",
+    "BiosVersion":  "FB09",
+    "BiosDate":  "2026-05-25",
+    "Board":  "GIGABYTE GAMING A16 3TH",
+    "Os":  "Майкрософт Windows 11 Pro 10.0.26200",
+    "OsInstalled":  "2026-11-01",
+    "Cpu":  "AMD Ryzen 7 260 w/ Radeon 780M Graphics",
+    "CpuCores":  8,
+    "CpuThreads":  16,
+    "RamTotalGB":  15.3,
+    "VirtFirmware":  true,
+    "Hypervisor":  true,
+    "RamModules":  [
+                       {
+                           "Slot":  "DIMM 0",
+                           "Bank":  "P0 CHANNEL A",
+                           "SizeGB":  16,
+                           "Type":  "DDR5",
+                           "SpeedMTs":  5600,
+                           "RunMTs":  5600,
+                           "Vendor":  "Micron Technology",
+                           "Part":  "CT16G56C46S5.M8D1",
+                           "Serial":  "EB6D907E"
+                       }
+                   ],
+    "RamSlots":  2,
+    "Gpus":  [
+                 {
+                     "Name":  "NVIDIA GeForce RTX 5050 Laptop GPU",
+                     "Driver":  "32.0.16.1088",
+                     "Status":  "OK",
+                     "Res":  "1920x1200",
+                     "Hz":  165
+                 },
+                 {
+                     "Name":  "AMD Radeon 780M Graphics",
+                     "Driver":  "32.0.13046.16",
+                     "Status":  "OK",
+                     "Res":  "x",
+                     "Hz":  null
+                 }
+             ],
+    "GpuMode":  "только дискретная (MUX)",
+    "NvSmi":  true,
+    "Nv":  {
+               "Name":  "NVIDIA GeForce RTX 5050 Laptop GPU",
+               "Vbios":  "98.07.1c.40.02",
+               "Driver":  "610.88",
+               "PowerLimitW":  65.87,
+               "PowerDefaultW":  50,
+               "PowerMaxW":  85,
+               "MaxClockMHz":  3090,
+               "VramMiB":  8151
+           },
+    "Panel":  "BOE 0B77 \u0000",
+    "PanelMaxHz":  60,
+    "Net":  [
+                "Realtek PCIe GbE Family Controller — Disconnected",
+                "Realtek 8852CE WiFi 6E PCI-E NIC — Up"
+            ],
+    "Bluetooth":  [
+                      "Realtek Bluetooth Adapter",
+                      "Перечислитель Bluetooth LE (Майкрософт)"
+                  ],
+    "ProblemDevices":  [
+
+                       ],
+    "SecureBoot":  true,
+    "Tpm":  "есть: True, готов: True",
+    "PowerScheme":  "GUID схемы питания: 381b4222-f694-41f0-9685-ff5bb260df2e  (Сбалансированная)",
+    "AcOnline":  true
+}

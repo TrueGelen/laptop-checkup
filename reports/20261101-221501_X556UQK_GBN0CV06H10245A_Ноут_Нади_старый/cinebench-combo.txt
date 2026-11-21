@@ -1,0 +1,232 @@
+Application start      : 11/01/26 at 22:47:36
+Executable             : 64 Bit
+Version / Build        : 23.200 / RBBenchmark330542
+Debugger               : not available
+Memory model           : release
+Startup path           : file:///F:/laptop-checkup/tools/cinebench
+Application path       : file:///F:/laptop-checkup/tools/cinebench/Cinebench.exe
+Application executable : file:///F:/laptop-checkup/tools/cinebench/Cinebench.exe
+Resource path          : file:///F:/laptop-checkup/tools/cinebench/resource
+Module path(s)         : file:///F:/laptop-checkup/tools/cinebench/corelibs; file:///F:/laptop-checkup/tools/cinebench/plugins; file:///C:/Users/Nadia/AppData/Roaming/Maxon/cinebench_03C0B2E8/plugins
+Temporary path         : file:///C:/Users/Nadia/AppData/Local/Temp
+Prefs path             : file:///C:/Users/Nadia/AppData/Roaming/Maxon/cinebench_03C0B2E8
+Global Prefs path      : file:///C:/Users/Nadia/AppData/Roaming/Maxon
+OS version             : Windows 10, 64 Bit, Professional Edition (build 19045)
+OS languages           : {ru-RU,en-US}
+App languages          : {en-US}
+Startup language       : en-US
+Processor              : 2(4)x Intel Core i5-7200U CPU
+Computer name          : DESKTOP-N55EF2B
+Unique OS identifier   : HnZCNbddOM8HyDnA8WOB-g-uucFh4--4kYhaDMLj4u4= [tpm]
+Thread Count           : 4
+CPU Speed (MHz)        : 2720.000
+Application Type       : Modular
+Command line arguments : "g_CinebenchCpuXTest=true" "g_CinebenchMinimumTestDuration=600" 
+
+Module path file:///F:/laptop-checkup/tools/cinebench/plugins couldn't be found
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/asset.module.xdl64 with module(s) net.maxon.asset
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/c4d_viewport_nodegraph.module.xdl64 with module(s) net.maxon.c4d_viewport_nodegraph
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/c4dplugin.xdl64 with module(s) net.maxon.rlmlicensing net.maxon.c4d.c4dplugin
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/command.module.xdl64 with module(s) net.maxon.command
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/corenodes.module.xdl64 with module(s) net.maxon.corenodes
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/crashhandler.module.xdl64 with module(s) net.maxon.crashhandler
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/crypt.module.xdl64 with module(s) net.maxon.crypt
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/drawport.module.xdl64 with module(s) net.maxon.drawport
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/drawport_functioncache.module.xdl64 with module(s) net.maxon.drawport_functioncache
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/drawport_general.module.xdl64 with module(s) net.maxon.drawport_general
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/drawport_opengl.module.xdl64 with module(s) net.maxon.drawport_opengl
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/drawport_selector.module.xdl64 with module(s) net.maxon.drawport_selector
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/embree.module.xdl64 with module(s) net.maxon.embree
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/geom.module.xdl64 with module(s) net.maxon.geom
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/geometry_abstraction.module.xdl64 with module(s) net.maxon.geometry_abstraction
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/gui.module.xdl64 with module(s) net.maxon.gui
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/image.module.xdl64 with module(s) net.maxon.image
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/image_winmf.module.xdl64 with module(s) net.maxon.image_winmf
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/licensing.module.xdl64 with module(s) net.maxon.licensing
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/math.module.xdl64 with module(s) net.maxon.math
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mesh.module.xdl64 with module(s) net.maxon.mesh
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/misc.module.xdl64 with module(s) net.maxon.misc
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_base_presenter.module.xdl64 with module(s) net.maxon.mvp_base_presenter
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_base_view.module.xdl64 with module(s) net.maxon.mvp_base_view
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_desktop2d_nodegraph_widgets.module.xdl64 with module(s) net.maxon.mvp_desktop2d_nodegraph_widgets
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_desktop2d_widgets.module.xdl64 with module(s) net.maxon.mvp_desktop2d_widgets
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_nodegraph_presenters.module.xdl64 with module(s) net.maxon.mvp_nodegraph_presenters
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mvp_nodes_presenters.module.xdl64 with module(s) net.maxon.mvp_nodes_presenters
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/network.module.xdl64 with module(s) net.maxon.network
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/neutron.module.xdl64 with module(s) net.maxon.neutron
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/nodes.module.xdl64 with module(s) net.maxon.nodes
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/nodes_corenodes.module.xdl64 with module(s) net.maxon.nodes_corenodes
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/opensubdiv.module.xdl64 with module(s) net.maxon.opensubdiv
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/render.module.xdl64 with module(s) net.maxon.render
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/retargetbase.module.xdl64 with module(s) net.maxon.retargetbase
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/shaderbase.module.xdl64 with module(s) net.maxon.shaderbase
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/shadernodes.module.xdl64 with module(s) net.maxon.shadernodes
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/svg.module.xdl64 with module(s) net.maxon.svg
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/tessellation.module.xdl64 with module(s) net.maxon.tessellation
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/advanced_render.xdl64 with module(s) net.maxon.c4d.advanced_render
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/c4d_viewport_render.xdl64 with module(s) net.maxon.c4d.c4d_viewport_render
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/ca.xdl64 with module(s) net.maxon.c4d.ca
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/ca2.xdl64 with module(s) net.maxon.c4d.ca2
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/cinebench.xdl64 with module(s) net.maxon.c4d.cinebench
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/clothilde.xdl64 with module(s) net.maxon.c4d.clothilde
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/colorchoosergui.xdl64 with module(s) net.maxon.c4d.colorchoosergui
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/compositing.xdl64 with module(s) net.maxon.c4d.compositing
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/exchanges.xdl64 with module(s) net.maxon.c4d.exchanges
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/expressiontag.xdl64 with module(s) net.maxon.c4d.expressiontag
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/hair.xdl64 with module(s) net.maxon.c4d.hair
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/interop.xdl64 with module(s) net.maxon.c4d.interop
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mkmodeler.xdl64 with module(s) net.maxon.c4d.mkmodeler
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mocca.xdl64 with module(s) net.maxon.c4d.mocca
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/model.xdl64 with module(s) net.maxon.c4d.model
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/mograph.xdl64 with module(s) net.maxon.c4d.mograph
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/nbo.xdl64 with module(s) net.maxon.c4d.nbo
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/nbp.xdl64 with module(s) net.maxon.c4d.nbp
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/newman.xdl64 with module(s) net.maxon.c4d.newman
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/nodeeditor.xdl64 with module(s) net.maxon.c4d.nodeeditor
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/objects.xdl64 with module(s) net.maxon.c4d.objects
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/shader.xdl64 with module(s) net.maxon.c4d.shader
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/sky.xdl64 with module(s) net.maxon.c4d.sky
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/sla.xdl64 with module(s) net.maxon.c4d.sla
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/xpressocore.xdl64 with module(s) net.maxon.c4d.xpressocore
+Loading file:///F:/laptop-checkup/tools/cinebench/corelibs/xtensions.xdl64 with module(s) net.maxon.c4d.xtensions
+CINEBENCH started
+Drawport API initialized
+    Framework        : OpenGL
+    Vendor           : Intel (INTELCORP)
+    Renderer         : Intel(R) HD Graphics 620
+    Framework version: 4.6.0 - Build 31.0.101.2140
+    Driver version   : 26.21.14.4250
+CINEBENCH AUTORUN
+Please wait until all tests are done!
+
+Running Multiple CPU Render Test...
+Minimum test duration: 600000.0 ms seconds.
+Rendering...
+Finalizing for 610.2 ms
+Finalizing for 1641.2 ms
+Finalizing for 2672.2 ms
+Finalizing for 3703.2 ms
+Finalizing for 4734.2 ms
+Finalizing for 5765.2 ms
+Finalizing for 6796.2 ms
+Finalizing for 7827.2 ms
+Finalizing for 8858.3 ms
+Finalizing for 9889.2 ms
+Finalizing for 10920.2 ms
+Finalizing for 11951.3 ms
+Finalizing for 12982.3 ms
+Finalizing for 13982.0 ms
+Finalizing for 15013.1 ms
+Finalizing for 16044.0 ms
+Finalizing for 17075.0 ms
+Finalizing for 18106.1 ms
+Finalizing for 19137.1 ms
+Finalizing for 20168.5 ms
+Finalizing for 21199.1 ms
+Finalizing for 22230.1 ms
+Finalizing for 23261.0 ms
+Finalizing for 24292.1 ms
+Finalizing for 25323.1 ms
+Finalizing for 26354.1 ms
+Finalizing for 27385.1 ms
+Finalizing for 28400.5 ms
+Finalizing for 29400.2 ms
+Finalizing for 30431.2 ms
+Finalizing for 31431.0 ms
+Finalizing for 32462.0 ms
+Finalizing for 33493.1 ms
+Finalizing for 34524.0 ms
+Finalizing for 35555.0 ms
+Finalizing for 36586.0 ms
+Finalizing for 37617.1 ms
+Finalizing for 38648.2 ms
+Finalizing for 39679.0 ms
+Finalizing for 40710.1 ms
+Finalizing for 41741.0 ms
+Finalizing for 42772.1 ms
+Finalizing for 43803.1 ms
+Finalizing for 44834.2 ms
+Finalizing for 45865.2 ms
+Finalizing for 46896.1 ms
+Finalizing for 47927.1 ms
+Finalizing for 48958.1 ms
+Finalizing for 49989.1 ms
+Finalizing for 51020.1 ms
+Finalizing for 52051.1 ms
+Finalizing for 53082.1 ms
+Finalizing for 54113.2 ms
+Finalizing for 55144.1 ms
+Finalizing for 56175.2 ms
+Finalizing for 57206.2 ms
+Finalizing for 58237.2 ms
+Finalizing for 59268.2 ms
+Finalizing for 60299.2 ms
+Finalizing for 61330.2 ms
+Finalizing for 62361.2 ms
+Finalizing for 63392.2 ms
+Finalizing for 64423.2 ms
+Finalizing for 65454.2 ms
+Finalizing for 66485.2 ms
+Finalizing for 67516.2 ms
+Finalizing for 68547.2 ms
+Finalizing for 69578.3 ms
+Finalizing for 70578.0 ms
+Finalizing for 71609.0 ms
+Finalizing for 72640.0 ms
+Finalizing for 73671.0 ms
+Finalizing for 74702.0 ms
+Finalizing for 75733.0 ms
+Finalizing for 76764.0 ms
+Finalizing for 77795.0 ms
+Finalizing for 78826.1 ms
+Finalizing for 79857.0 ms
+Finalizing for 80888.0 ms
+Finalizing for 81919.1 ms
+Finalizing for 82950.1 ms
+Finalizing for 83981.1 ms
+Finalizing for 85012.1 ms
+Finalizing for 86043.1 ms
+Finalizing for 87074.1 ms
+Finalizing for 88105.2 ms
+Finalizing for 89136.1 ms
+Finalizing for 90167.1 ms
+Finalizing for 91198.1 ms
+Finalizing for 92229.2 ms
+Finalizing for 93260.1 ms
+Finalizing for 94275.5 ms
+Finalizing for 95275.3 ms
+Finalizing for 96275.0 ms
+Finalizing for 97306.1 ms
+Finalizing for 98337.1 ms
+Finalizing for 99368.5 ms
+Finalizing for 100399.1 ms
+Finalizing for 101430.1 ms
+Finalizing for 102461.1 ms
+Finalizing for 103492.1 ms
+Finalizing for 104523.1 ms
+Finalizing for 105554.1 ms
+Finalizing for 106585.1 ms
+Finalizing for 107616.1 ms
+Finalizing for 108647.2 ms
+Finalizing for 109678.1 ms
+Finalizing for 110709.1 ms
+Finalizing for 111740.2 ms
+Finalizing for 112771.6 ms
+Finalizing for 113802.1 ms
+Finalizing for 114833.2 ms
+Finalizing for 115864.2 ms
+Finalizing for 116895.2 ms
+Finalizing for 117926.2 ms
+Finalizing for 118957.2 ms
+Finalizing for 119988.2 ms
+Finalizing for 121019.2 ms
+Finalizing for 122050.2 ms
+Finalizing for 123081.2 ms
+Finalizing for 124112.3 ms
+Finalizing for 125143.2 ms
+Finalizing for 126174.7 ms
+Finalizing for 127205.2 ms
+Finalizing for 128205.0 ms
+Values: {1089.365} -> Avg/Deviation: 1089.365/0.000
+CB 1089.36 (0.00)
+ 

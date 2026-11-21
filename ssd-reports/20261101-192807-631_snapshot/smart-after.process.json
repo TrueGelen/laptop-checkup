@@ -1,0 +1,11 @@
+﻿{
+    "Exe":  "D:\\laptop-checkup\\tools\\smartmontools\\smartctl.exe",
+    "Arguments":  [
+                      "--json=o",
+                      "-x",
+                      "/dev/pd0"
+                  ],
+    "ExitCode":  0,
+    "TimedOut":  false,
+    "Seconds":  0.045288499999999995
+}

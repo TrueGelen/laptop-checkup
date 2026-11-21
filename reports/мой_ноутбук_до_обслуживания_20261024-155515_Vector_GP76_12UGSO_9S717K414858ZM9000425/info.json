@@ -1,0 +1,99 @@
+﻿{
+    "Manufacturer":  "Micro-Star International Co., Ltd.",
+    "Model":  "Vector GP76 12UGSO",
+    "Sku":  "17K4.5",
+    "Serial":  "9S717K414858ZM9000425",
+    "BiosVersion":  "E17K4IMS.504",
+    "BiosDate":  "2022-06-06",
+    "Board":  "MS-17K4",
+    "Os":  "Майкрософт Windows 10 Pro 10.0.19045",
+    "OsInstalled":  "2022-12-23",
+    "Cpu":  "12th Gen Intel(R) Core(TM) i7-12700H",
+    "CpuCores":  14,
+    "CpuThreads":  20,
+    "RamTotalGB":  31.7,
+    "VirtFirmware":  false,
+    "Hypervisor":  true,
+    "RamModules":  [
+                       {
+                           "Slot":  "Controller0-ChannelA-DIMM0",
+                           "Bank":  "BANK 0",
+                           "SizeGB":  16,
+                           "Type":  "DDR5",
+                           "SpeedMTs":  4800,
+                           "RunMTs":  4800,
+                           "Vendor":  "Kingston",
+                           "Part":  "KF548S38-16"
+                       },
+                       {
+                           "Slot":  "Controller1-ChannelA-DIMM0",
+                           "Bank":  "BANK 0",
+                           "SizeGB":  16,
+                           "Type":  "DDR5",
+                           "SpeedMTs":  4800,
+                           "RunMTs":  4800,
+                           "Vendor":  "Kingston",
+                           "Part":  "KF548S38-16"
+                       }
+                   ],
+    "RamSlots":  2,
+    "Gpus":  [
+                 {
+                     "Name":  "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+                     "Driver":  "32.0.15.9186",
+                     "Status":  "OK",
+                     "Res":  "x",
+                     "Hz":  null
+                 },
+                 {
+                     "Name":  "Intel(R) Iris(R) Xe Graphics",
+                     "Driver":  "32.0.101.7092",
+                     "Status":  "OK",
+                     "Res":  "1920x1080",
+                     "Hz":  144
+                 }
+             ],
+    "GpuMode":  "гибридный (MSHybrid/Optimus)",
+    "NvSmi":  true,
+    "Nv":  {
+               "Name":  "NVIDIA GeForce RTX 3070 Ti Laptop GPU",
+               "Vbios":  "94.04.7e.00.03",
+               "Driver":  "591.86",
+               "PowerLimitW":  125,
+               "PowerDefaultW":  125,
+               "PowerMaxW":  150,
+               "MaxClockMHz":  1785,
+               "VramMiB":  8192
+           },
+    "Panel":  "AUO 978F \u0000",
+    "PanelMaxHz":  144,
+    "Net":  [
+                "Intel(R) Wi-Fi 6E AX211 160MHz — Up",
+                "Realtek Gaming 2.5GbE Family Controller — Disconnected"
+            ],
+    "Bluetooth":  [
+                      "Универсальная служба атрибутов Bluetooth с низким энергопотреблением",
+                      "Soundcore Mega",
+                      "Универсальный профиль доступа",
+                      "Intel(R) Wireless Bluetooth(R)",
+                      "X9 BT5.0",
+                      "HUAWEI FreeBuds SE 2",
+                      "Служба обнаружения служб",
+                      "Служба защиты доступа к личной сети",
+                      "Служба сведений об устройствах",
+                      "iPhone (Влад)",
+                      "SVEN AP-B630MV",
+                      "Перечислитель Bluetooth LE (Майкрософт)",
+                      "Служба доступа к телефонной книге (PSE)"
+                  ],
+    "ProblemDevices":  [
+                           {
+                               "Name":  "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+                               "Code":  22
+                           }
+                       ],
+    "SecureBoot":  null,
+    "Tpm":  "есть: False, готов: False",
+    "PowerScheme":  "GUID схемы питания: 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c  (Высокая производительность)",
+    "AcOnline":  true
+}

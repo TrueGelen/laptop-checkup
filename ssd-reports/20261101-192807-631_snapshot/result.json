@@ -1,0 +1,74 @@
+﻿{
+    "Version":  2,
+    "Started":  "2026-11-01T19:28:06.3470802+03:00",
+    "SnapshotOnly":  true,
+    "Status":  "collected",
+    "Failures":  [
+
+                 ],
+    "Computer":  {
+                     "Manufacturer":  "GIGABYTE",
+                     "Model":  "GIGABYTE GAMING A16 3TH",
+                     "LastBoot":  "2026-11-01T19:10:51.5000000+03:00"
+                 },
+    "Disk":  {
+                 "SystemDrive":  "C:",
+                 "Number":  0,
+                 "Name":  "GIGABYTE AG450E1024-SI",
+                 "Bus":  "NVMe",
+                 "SizeBytes":  1024209543168,
+                 "Device":  "/dev/pd0"
+             },
+    "SsdSerial":  "511250515100010150",
+    "SsdModel":  "GIGABYTE AG450E1024-SI",
+    "CountersBefore":  {
+                           "Serial":  "511250515100010150",
+                           "Model":  "GIGABYTE AG450E1024-SI",
+                           "PowerCycles":  32629,
+                           "UnsafeShutdowns":  15945,
+                           "PowerOnHours":  293,
+                           "PercentageUsed":  2,
+                           "MediaErrors":  0,
+                           "ErrorLogEntries":  0,
+                           "CriticalWarning":  0,
+                           "TemperatureC":  47,
+                           "DataUnitsRead":  6713724,
+                           "DataUnitsWritten":  10236947
+                       },
+    "PreviousRun":  "20261101-192504-444_quick",
+    "SincePreviousRun":  {
+                             "Serial":  "511250515100010150",
+                             "PowerCycles":  1,
+                             "UnsafeShutdowns":  0,
+                             "PowerOnHours":  0,
+                             "MediaErrors":  0,
+                             "ErrorLogEntries":  0,
+                             "DataUnitsRead":  6313,
+                             "DataUnitsWritten":  3000
+                         },
+    "CountersAfter":  {
+                          "Serial":  "511250515100010150",
+                          "Model":  "GIGABYTE AG450E1024-SI",
+                          "PowerCycles":  32629,
+                          "UnsafeShutdowns":  15945,
+                          "PowerOnHours":  293,
+                          "PercentageUsed":  2,
+                          "MediaErrors":  0,
+                          "ErrorLogEntries":  0,
+                          "CriticalWarning":  0,
+                          "TemperatureC":  47,
+                          "DataUnitsRead":  6713727,
+                          "DataUnitsWritten":  10236947
+                      },
+    "DuringRun":  {
+                      "Serial":  "511250515100010150",
+                      "PowerCycles":  0,
+                      "UnsafeShutdowns":  0,
+                      "PowerOnHours":  0,
+                      "MediaErrors":  0,
+                      "ErrorLogEntries":  0,
+                      "DataUnitsRead":  3,
+                      "DataUnitsWritten":  0
+                  },
+    "Finished":  "2026-11-01T19:28:09.0152542+03:00"
+}

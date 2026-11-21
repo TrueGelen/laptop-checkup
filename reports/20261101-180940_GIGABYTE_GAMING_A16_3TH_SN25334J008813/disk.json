@@ -1,0 +1,32 @@
+﻿[
+    {
+        "Name":  "GIGABYTE AG450E1024-SI",
+        "Bus":  "NVMe",
+        "Media":  "SSD",
+        "SizeGB":  954,
+        "Serial":  "6479_A7A9_2AD0_09F6.",
+        "Firmware":  "ELFMH0.1",
+        "Health":  "Healthy",
+        "WearPct":  0,
+        "TempC":  47,
+        "TempMaxC":  83,
+        "PowerOnHours":  null,
+        "ReadErrUncorrected":  null,
+        "WriteErrUncorrected":  null
+    },
+    {
+        "Name":  "Generic Flash Disk",
+        "Bus":  "USB",
+        "Media":  "Unspecified",
+        "SizeGB":  29,
+        "Serial":  "\u00037",
+        "Firmware":  "8.07",
+        "Health":  "Healthy",
+        "WearPct":  0,
+        "TempC":  0,
+        "TempMaxC":  0,
+        "PowerOnHours":  null,
+        "ReadErrUncorrected":  null,
+        "WriteErrUncorrected":  null
+    }
+]

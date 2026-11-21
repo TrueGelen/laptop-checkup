@@ -1,0 +1,47 @@
+﻿[
+    {
+        "Name":  "TOSHIBA-TR200",
+        "Bus":  "SATA",
+        "Media":  "SSD",
+        "SizeGB":  224,
+        "Serial":  "99OB835SK5SL",
+        "Firmware":  "SBFA17.1",
+        "Health":  "Healthy",
+        "WearPct":  0,
+        "TempC":  26,
+        "TempMaxC":  0,
+        "PowerOnHours":  4287,
+        "ReadErrUncorrected":  null,
+        "WriteErrUncorrected":  null
+    },
+    {
+        "Name":  "ST1000LM035-1RK172",
+        "Bus":  "SATA",
+        "Media":  "HDD",
+        "SizeGB":  932,
+        "Serial":  "WCB0WLSS",
+        "Firmware":  "SDM1",
+        "Health":  "Healthy",
+        "WearPct":  0,
+        "TempC":  23,
+        "TempMaxC":  0,
+        "PowerOnHours":  5910,
+        "ReadErrUncorrected":  0,
+        "WriteErrUncorrected":  null
+    },
+    {
+        "Name":  "Generic Flash Disk",
+        "Bus":  "USB",
+        "Media":  "Unspecified",
+        "SizeGB":  29,
+        "Serial":  "\u00037",
+        "Firmware":  "8.07",
+        "Health":  "Healthy",
+        "WearPct":  0,
+        "TempC":  0,
+        "TempMaxC":  0,
+        "PowerOnHours":  null,
+        "ReadErrUncorrected":  null,
+        "WriteErrUncorrected":  null
+    }
+]

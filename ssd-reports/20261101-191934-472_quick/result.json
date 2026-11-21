@@ -1,0 +1,23 @@
+﻿{
+    "Version":  1,
+    "Started":  "2026-11-01T19:19:31.8755013+03:00",
+    "SnapshotOnly":  false,
+    "Status":  "error",
+    "Failures":  [
+                     "smartctl could not access the disk (smart-before), exit 1"
+                 ],
+    "Computer":  {
+                     "Manufacturer":  "GIGABYTE",
+                     "Model":  "GIGABYTE GAMING A16 3TH",
+                     "LastBoot":  "2026-11-01T19:10:51.5000000+03:00"
+                 },
+    "Disk":  {
+                 "SystemDrive":  "C:",
+                 "Number":  0,
+                 "Name":  "GIGABYTE AG450E1024-SI",
+                 "Bus":  "NVMe",
+                 "SizeBytes":  1024209543168,
+                 "Device":  "/dev/pd0"
+             },
+    "Finished":  "2026-11-01T19:19:35.4301742+03:00"
+}

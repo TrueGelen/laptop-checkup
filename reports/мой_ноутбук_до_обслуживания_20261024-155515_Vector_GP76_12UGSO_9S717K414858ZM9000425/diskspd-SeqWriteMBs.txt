@@ -1,0 +1,116 @@
+﻿diskspd.exe : WARNING: Error adjusting token privileges for SeManageVolumePrivilege (error code: 1300)
+F:\laptop-checkup\checkup.ps1:341 знак:12
++     $out = & $exe @($tests[$k] + $file) 2>&1 | Out-String
++            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: Error ...ror code: 1300):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: Could not set privileges for setting valid file size; will use a slower method of preparing the file
+
+Command Line: F:\laptop-checkup\tools\diskspd\amd64\diskspd.exe -c256M -b1M -d5 -o8 -t1 -W2 -Sh -w100 C:\Users\gelen\AppData\Local\Temp\laptop-checkup-diskspd.dat
+
+Input parameters:
+
+  timespan:   1
+  -------------
+    duration: 5s
+    warm up time: 2s
+    cool down time: 0s
+    random seed: 0
+    affinity assignment: cpu order, fill groups, P-cores first
+    buffer separation: thread optimized (16MiB)
+    path: 'C:\Users\gelen\AppData\Local\Temp\laptop-checkup-diskspd.dat'
+      think time: 0ms
+      burst size: 0
+      software cache disabled
+      hardware write cache disabled, writethrough on
+      performing write test
+      block size: 1MiB
+      using sequential I/O (stride: 1MiB)
+      number of outstanding I/O operations per thread: 8
+      threads per file: 1
+      using I/O Completion Ports
+      IO priority: normal
+
+System information:
+
+  computer name:        DESKTOP-MNVKHRV
+  processor name:       12th Gen Intel(R) Core(TM) i7-12700H
+  start time:           2026/10/24 12:55:32 UTC
+  active power scheme:  ╨Т╤Л╤Б╨╛╨║╨░╤П ╨┐╤А╨╛╨╕╨╖╨▓╨╛╨┤╨╕╤В╨╡╨╗╤М╨╜╨╛╤Б╤В╤М (8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c)
+  page size:            4KiB
+
+  cpu count:            20
+  core count:           14
+  group count:          1
+  node count:           1
+  socket count:         1
+  heterogeneous cores:  y
+
+  cache information:
+
+    Cache |   Size   | Line  | Assoc  | CPU
+    -------------------------------------------------------
+    L1d   |    48KiB |   64B | 12-way | 0-11 (per core)
+    L1i   |    32KiB |   64B |  8-way | 0-11 (per core)
+    L2    |  1.25MiB |   64B | 10-way | 0-11 (per core)
+    L3    |    24MiB |   64B | 12-way | 0-19
+    L1d   |    48KiB |   64B | 12-way | 12-19 (per cpu)
+    L1i   |    32KiB |   64B |  8-way | 12-19 (per cpu)
+    L2    |  1.25MiB |   64B | 10-way | 12-15
+    L2    |  1.25MiB |   64B | 10-way | 16-19
+
+Results for timespan 1:
+*******************************************************************************
+
+actual test time:	5.00s
+thread count:		1
+
+effective affinity (cpu): 0
+
+Core | Class | CPU |  Usage |  User  | Kernel |  Idle
+-------------------------------------------------------
+    0|     1P|    0|   8.44%|   0.31%|   8.12%|  91.56%
+    0|     1P|    1|   0.94%|   0.00%|   0.94%|  99.06%
+    1|     1P|    2|   0.31%|   0.00%|   0.31%|  99.69%
+    1|     1P|    3|   0.00%|   0.00%|   0.00%| 100.00%
+    2|     1P|    4|   2.51%|   0.63%|   1.88%|  97.49%
+    2|     1P|    5|   0.31%|   0.00%|   0.31%|  99.69%
+    3|     1P|    6|   0.31%|   0.00%|   0.31%|  99.69%
+    3|     1P|    7|   0.00%|   0.00%|   0.00%| 100.00%
+    4|     1P|    8|   0.62%|   0.00%|   0.62%|  99.38%
+    4|     1P|    9|   0.00%|   0.00%|   0.00%| 100.00%
+    5|     1P|   10|   0.31%|   0.00%|   0.31%|  99.69%
+    5|     1P|   11|   0.00%|   0.00%|   0.00%| 100.00%
+    6|     0 |   12|   1.56%|   0.93%|   0.62%|  98.44%
+    7|     0 |   13|   1.88%|   0.62%|   1.25%|  98.12%
+    8|     0 |   14|   0.62%|   0.00%|   0.62%|  99.38%
+    9|     0 |   15|   1.25%|   0.00%|   1.25%|  98.75%
+   10|     0 |   16|   0.31%|   0.00%|   0.31%|  99.69%
+   11|     0 |   17|   2.81%|   0.31%|   2.50%|  97.19%
+   12|     0 |   18|   0.94%|   0.31%|   0.62%|  99.06%
+   13|     0 |   19|   3.44%|   1.56%|   1.88%|  96.56%
+-------------------------------------------------------
+               avg.|   1.33%|   0.23%|   1.09%|  98.67%
+
+Total IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |     17379098624 |        16574 |    3313.10 |    3313.10 | C:\Users\gelen\AppData\Local\Temp\laptop-checkup-diskspd.dat (256MiB)
+------------------------------------------------------------------------------
+total:       17379098624 |        16574 |    3313.10 |    3313.10
+
+Read IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |               0 |            0 |       0.00 |       0.00 | C:\Users\gelen\AppData\Local\Temp\laptop-checkup-diskspd.dat (256MiB)
+------------------------------------------------------------------------------
+total:                 0 |            0 |       0.00 |       0.00
+
+Write IO
+thread |       bytes     |     I/Os     |    MiB/s   |  I/O per s |  file
+------------------------------------------------------------------------------
+     0 |     17379098624 |        16574 |    3313.10 |    3313.10 | C:\Users\gelen\AppData\Local\Temp\laptop-checkup-diskspd.dat (256MiB)
+------------------------------------------------------------------------------
+total:       17379098624 |        16574 |    3313.10 |    3313.10
+

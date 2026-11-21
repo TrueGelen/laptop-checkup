@@ -1,0 +1,41 @@
+﻿{
+    "json_format_version":  [
+                                1,
+                                0
+                            ],
+    "smartctl":  {
+                     "version":  [
+                                     7,
+                                     5
+                                 ],
+                     "pre_release":  false,
+                     "svn_revision":  "5714",
+                     "platform_info":  "x86_64-w64-mingw32-w11-b26200",
+                     "build_info":  "(AppVeyor)",
+                     "argv":  [
+                                  "smartctl",
+                                  "--json=o",
+                                  "-t",
+                                  "short",
+                                  "/dev/pd0"
+                              ],
+                     "output":  [
+                                    "smartctl 7.5 2025-04-30 r5714 [x86_64-w64-mingw32-w11-b26200] (AppVeyor)",
+                                    "Copyright (C) 2002-25, Bruce Allen, Christian Franke, www.smartmontools.org",
+                                    "",
+                                    "Self-test has begun (NSID 0xffffffff)",
+                                    "Use smartctl -X to abort test"
+                                ],
+                     "exit_status":  0
+                 },
+    "local_time":  {
+                       "time_t":  1793550305,
+                       "asctime":  "Sun Nov 01 19:25:05 2026 RTZ"
+                   },
+    "device":  {
+                   "name":  "/dev/pd0",
+                   "info_name":  "/dev/pd0",
+                   "type":  "nvme",
+                   "protocol":  "NVMe"
+               }
+}

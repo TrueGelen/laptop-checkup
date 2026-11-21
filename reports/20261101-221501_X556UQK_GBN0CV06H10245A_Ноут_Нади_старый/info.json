@@ -1,0 +1,98 @@
+﻿{
+    "Manufacturer":  "ASUSTeK COMPUTER INC.",
+    "Model":  "X556UQK",
+    "Sku":  "",
+    "Serial":  "GBN0CV06H10245A",
+    "BiosVersion":  "X556UQK.318",
+    "BiosDate":  "2019-08-08",
+    "Board":  "X556UQK",
+    "Os":  "Майкрософт Windows 10 Pro 10.0.19045",
+    "OsInstalled":  "2021-05-16",
+    "Cpu":  "Intel(R) Core(TM) i5-7200U CPU @ 2.50GHz",
+    "CpuCores":  2,
+    "CpuThreads":  4,
+    "RamTotalGB":  19.9,
+    "VirtFirmware":  true,
+    "Hypervisor":  false,
+    "RamModules":  [
+                       {
+                           "Slot":  "ChannelA-DIMM0",
+                           "Bank":  "BANK 0",
+                           "SizeGB":  4,
+                           "Type":  "DDR4",
+                           "SpeedMTs":  2133,
+                           "RunMTs":  2133,
+                           "Vendor":  "Samsung",
+                           "Part":  "M471A5143EB0-CPB",
+                           "Serial":  "00000000"
+                       },
+                       {
+                           "Slot":  "ChannelB-DIMM0",
+                           "Bank":  "BANK 2",
+                           "SizeGB":  16,
+                           "Type":  "DDR4",
+                           "SpeedMTs":  2667,
+                           "RunMTs":  2133,
+                           "Vendor":  "Samsung",
+                           "Part":  "M471A2K43CB1-CTD",
+                           "Serial":  "4B0B0200"
+                       }
+                   ],
+    "RamSlots":  4,
+    "Gpus":  [
+                 {
+                     "Name":  "NVIDIA GeForce 940MX",
+                     "Driver":  "26.21.14.4250",
+                     "Status":  "OK",
+                     "Res":  "x",
+                     "Hz":  null
+                 },
+                 {
+                     "Name":  "Intel(R) HD Graphics 620",
+                     "Driver":  "31.0.101.2140",
+                     "Status":  "OK",
+                     "Res":  "1366x768",
+                     "Hz":  60
+                 }
+             ],
+    "GpuMode":  "гибридный (MSHybrid/Optimus)",
+    "NvSmi":  true,
+    "Nv":  {
+               "Name":  "GeForce 940MX",
+               "Vbios":  "82.08.59.00.28",
+               "Driver":  "442.50",
+               "PowerLimitW":  null,
+               "PowerDefaultW":  null,
+               "PowerMaxW":  null,
+               "MaxClockMHz":  1241,
+               "VramMiB":  2048
+           },
+    "Panel":  "AUO 46EC \u0000",
+    "PanelMaxHz":  60,
+    "Net":  [
+                "Qualcomm Atheros AR956x Wireless Network Adapter — Up",
+                "Realtek PCIe GBE Family Controller — Disconnected"
+            ],
+    "Bluetooth":  [
+                      "SVEN AP-B630MV",
+                      "Служба идентификации устройств",
+                      "Служба доступа к телефонной книге (PSE)",
+                      "iPhone (Надежда)",
+                      "Перечислитель Bluetooth LE (Майкрософт)",
+                      "Soundcore Mega",
+                      "HUAWEI Sound Joy-05186",
+                      "Qualcomm Atheros Bluetooth 4.0",
+                      "Служба обнаружения служб",
+                      "Служба защиты доступа к личной сети"
+                  ],
+    "ProblemDevices":  [
+                           {
+                               "Name":  "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+                               "Code":  22
+                           }
+                       ],
+    "SecureBoot":  true,
+    "Tpm":  "есть: True, готов: True",
+    "PowerScheme":  "GUID схемы питания: 381b4222-f694-41f0-9685-ff5bb260df2e  (Сбалансированная)",
+    "AcOnline":  true
+}
